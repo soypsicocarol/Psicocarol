@@ -3,28 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoyPsicoCarol — Psicoeducación para Familias</title>
+<title>Soy Psico. Carol — Psicoeducación para Familias</title>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8688885729274409" crossorigin="anonymous"></script>
+
+<!-- Disqus count -->
+<script id="dsq-count-scr" src="//https-soypsicocarol-github-io.disqus.com/count.js" async></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --crema: #FDF8F2;
+    --fondo: #FFFFFF;
+    --fondo-suave: #F7F9FC;
     --aqua: #7EE8E8;
-    --aqua-suave: #C8F4F4;
+    --aqua-suave: #D6F6F6;
     --coral: #E8735A;
     --salmon: #F2A97E;
     --verde: #5B8A6F;
+    --verde-suave: #EEF6F1;
     --amarillo: #F5D76E;
-    --texto: #1E1B18;
-    --texto-suave: #6B6560;
-    --blanco: #FFFFFF;
+    --azul: #7B9EC2;
+    --lila: #C97BE8;
+    --rojo-suave: #E87E7E;
+    --texto: #1A1A2E;
+    --texto-suave: #64748B;
+    --borde: #E8EDF2;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: var(--crema);
+    background: var(--fondo);
     font-family: 'DM Sans', sans-serif;
     color: var(--texto);
     overflow-x: hidden;
@@ -34,14 +46,15 @@
   nav {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: rgba(253,248,242,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(126,232,232,0.3);
-    padding: 14px 32px;
+    z-index: 200;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--borde);
+    padding: 12px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
   }
 
   .nav-logo {
@@ -52,30 +65,30 @@
   }
 
   .nav-logo img {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--aqua);
+    border: 2.5px solid var(--aqua);
   }
 
-  .nav-logo span {
+  .nav-logo-text {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 17px;
     color: var(--texto);
   }
 
-  .nav-logo span em { color: var(--coral); font-style: italic; }
+  .nav-logo-text em { color: var(--coral); font-style: italic; }
 
   .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 30px;
     list-style: none;
   }
 
   .nav-links a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 500;
     color: var(--texto-suave);
     transition: color 0.2s;
@@ -87,31 +100,32 @@
     background: var(--aqua-suave);
     border: none;
     border-radius: 20px;
-    padding: 7px 16px;
+    padding: 8px 18px;
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     color: var(--texto);
     transition: background 0.2s;
+    white-space: nowrap;
   }
 
   .nav-lang:hover { background: var(--aqua); }
 
   /* ─── HERO ─── */
   .hero {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 80px 32px 60px;
+    padding: 90px 40px 70px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 70px;
     align-items: center;
   }
 
   .hero-texto h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 5vw, 54px);
-    line-height: 1.18;
+    font-size: clamp(34px, 4.5vw, 56px);
+    line-height: 1.15;
     margin-bottom: 22px;
   }
 
@@ -120,23 +134,24 @@
   .hero-texto p {
     font-size: 17px;
     color: var(--texto-suave);
-    line-height: 1.8;
+    line-height: 1.85;
     margin-bottom: 32px;
     font-weight: 300;
+    max-width: 460px;
   }
 
   .hero-badges {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 36px;
+    margin-bottom: 38px;
   }
 
   .badge {
-    background: white;
-    border: 1.5px solid var(--aqua);
+    background: var(--fondo-suave);
+    border: 1.5px solid var(--borde);
     border-radius: 20px;
-    padding: 7px 16px;
+    padding: 7px 15px;
     font-size: 13px;
     font-weight: 500;
     color: var(--texto);
@@ -148,7 +163,7 @@
     color: white;
     border: none;
     border-radius: 30px;
-    padding: 16px 36px;
+    padding: 16px 38px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -159,7 +174,7 @@
 
   .btn-primario:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 32px rgba(232,115,90,0.4);
+    box-shadow: 0 12px 32px rgba(232,115,90,0.4);
   }
 
   .hero-imagen {
@@ -170,27 +185,40 @@
   }
 
   .hero-imagen img {
-    width: 320px;
-    height: 320px;
+    width: 340px;
+    height: 340px;
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid var(--aqua);
-    box-shadow: 0 20px 60px rgba(126,232,232,0.4);
-    animation: flotar 4s ease-in-out infinite;
+    box-shadow: 0 24px 70px rgba(126,232,232,0.35);
+    position: relative;
+    z-index: 2;
+    animation: flotar 5s ease-in-out infinite;
   }
 
   @keyframes flotar {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-14px); }
   }
 
   .hero-deco {
     position: absolute;
-    width: 380px;
-    height: 380px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     border: 2px dashed var(--aqua-suave);
-    animation: girar 20s linear infinite;
+    animation: girar 25s linear infinite;
+    z-index: 1;
+  }
+
+  .hero-deco2 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 1px dashed #F2A97E44;
+    animation: girar 35s linear infinite reverse;
+    z-index: 1;
   }
 
   @keyframes girar {
@@ -199,52 +227,54 @@
   }
 
   /* ─── STATS ─── */
-  .stats {
-    background: white;
-    padding: 40px 32px;
-    border-top: 1px solid rgba(126,232,232,0.2);
-    border-bottom: 1px solid rgba(126,232,232,0.2);
+  .stats-wrap {
+    background: var(--fondo-suave);
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+    padding: 44px 40px;
   }
 
   .stats-inner {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 20px;
     text-align: center;
   }
 
   .stat-num {
     font-family: 'Playfair Display', serif;
-    font-size: 38px;
+    font-size: 42px;
     color: var(--coral);
     display: block;
+    line-height: 1;
   }
 
   .stat-label {
     font-size: 13px;
     color: var(--texto-suave);
     line-height: 1.5;
-    margin-top: 4px;
+    margin-top: 6px;
+    display: block;
   }
 
-  /* ─── SECCIÓN TEMAS ─── */
+  /* ─── SECCIÓN GENERAL ─── */
   .seccion {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 80px 32px;
+    padding: 80px 40px;
   }
 
   .seccion-header {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 58px;
   }
 
   .etiqueta-seccion {
     display: inline-block;
     background: var(--aqua-suave);
-    color: var(--texto);
+    color: #2A8A8A;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -256,7 +286,7 @@
 
   .seccion-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 4vw, 40px);
+    font-size: clamp(28px, 4vw, 42px);
     line-height: 1.2;
     margin-bottom: 14px;
   }
@@ -266,54 +296,53 @@
   .seccion-header p {
     font-size: 16px;
     color: var(--texto-suave);
-    max-width: 580px;
+    max-width: 600px;
     margin: 0 auto;
-    line-height: 1.75;
+    line-height: 1.8;
     font-weight: 300;
   }
 
   /* ─── GRID CATEGORÍAS ─── */
   .grid-categorias {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 22px;
   }
 
   .categoria-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--borde);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    transition: transform 0.25s, box-shadow 0.25s;
   }
 
   .categoria-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.09);
   }
 
+  .cat-barra { height: 4px; width: 100%; }
+
   .cat-header {
-    padding: 24px 26px 18px;
+    padding: 22px 24px 18px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     cursor: pointer;
     user-select: none;
   }
 
-  .cat-icono {
-    font-size: 36px;
-    flex-shrink: 0;
-  }
+  .cat-icono { font-size: 34px; flex-shrink: 0; }
 
-  .cat-titulo {
-    flex: 1;
-  }
+  .cat-titulo { flex: 1; }
 
   .cat-titulo h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    margin-bottom: 4px;
+    font-size: 16.5px;
+    margin-bottom: 3px;
+    color: var(--texto);
   }
 
   .cat-titulo span {
@@ -322,46 +351,44 @@
   }
 
   .cat-toggle {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: none;
-    background: var(--crema);
-    font-size: 18px;
+    background: var(--fondo-suave);
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s, transform 0.3s;
     flex-shrink: 0;
+    line-height: 1;
+    color: var(--texto-suave);
   }
 
   .cat-toggle.abierto {
     background: var(--aqua-suave);
     transform: rotate(45deg);
-  }
-
-  .cat-barra {
-    height: 3px;
-    width: 100%;
+    color: #2A8A8A;
   }
 
   .cat-contenido {
     display: none;
-    padding: 0 26px 24px;
+    padding: 0 24px 22px;
     animation: slideDown 0.3s ease;
   }
 
   .cat-contenido.visible { display: block; }
 
   @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-8px); }
+    from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .subtema {
-    border-bottom: 1px solid #F0EDE8;
-    padding: 14px 0;
+    border-bottom: 1px solid var(--borde);
+    padding: 13px 0;
     cursor: pointer;
   }
 
@@ -371,7 +398,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 500;
     color: var(--texto);
     gap: 10px;
@@ -380,187 +407,236 @@
   .subtema-titulo span { flex: 1; }
 
   .subtema-flecha {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--texto-suave);
-    transition: transform 0.2s;
+    transition: transform 0.25s;
   }
 
   .subtema.expandido .subtema-flecha { transform: rotate(90deg); }
 
   .subtema-contenido {
     display: none;
-    margin-top: 12px;
-    background: var(--crema);
-    border-radius: 12px;
-    padding: 16px;
+    margin-top: 13px;
+    background: var(--fondo-suave);
+    border-radius: 14px;
+    padding: 18px;
+    border-left: 3px solid;
   }
 
   .subtema.expandido .subtema-contenido { display: block; }
 
   .subtema-contenido p {
     font-size: 13.5px;
-    line-height: 1.75;
+    line-height: 1.8;
     color: var(--texto-suave);
     margin-bottom: 10px;
   }
 
-  .subtema-contenido p:last-child { margin-bottom: 0; }
-
-  .subtema-contenido strong { color: var(--texto); font-weight: 500; }
+  .subtema-contenido p:last-of-type { margin-bottom: 6px; }
+  .subtema-contenido strong { color: var(--texto); font-weight: 600; }
 
   .tag-evidencia {
     display: inline-block;
-    background: #EEF6F1;
+    background: var(--verde-suave);
     color: var(--verde);
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
     padding: 4px 10px;
     border-radius: 10px;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
-  /* ─── COLORES POR CATEGORÍA ─── */
-  .c1 { border-top: 4px solid #7EE8E8; }
-  .c2 { border-top: 4px solid #F2A97E; }
-  .c3 { border-top: 4px solid #E8735A; }
-  .c4 { border-top: 4px solid #5B8A6F; }
-  .c5 { border-top: 4px solid #F5D76E; }
-  .c6 { border-top: 4px solid #7B9EC2; }
-  .c7 { border-top: 4px solid #C97BE8; }
-  .c8 { border-top: 4px solid #E87E7E; }
+  /* ─── COLORES ─── */
+  .c1  { border-top: 4px solid #7EE8E8; }
+  .c2  { border-top: 4px solid #F2A97E; }
+  .c3  { border-top: 4px solid #E8735A; }
+  .c4  { border-top: 4px solid #5B8A6F; }
+  .c5  { border-top: 4px solid #F5D76E; }
+  .c6  { border-top: 4px solid #7B9EC2; }
+  .c7  { border-top: 4px solid #C97BE8; }
+  .c8  { border-top: 4px solid #E87E7E; }
+  .c9  { border-top: 4px solid #6EC4A7; }
+  .c10 { border-top: 4px solid #F26B8A; }
+  .c11 { border-top: 4px solid #A07BE8; }
+  .c12 { border-top: 4px solid #E8C45A; }
+  .c13 { border-top: 4px solid #5AA8E8; }
+  .c14 { border-top: 4px solid #E85A5A; }
+  .c15 { border-top: 4px solid #7EE8B0; }
+  .c16 { border-top: 4px solid #E87EB0; }
+  .c17 { border-top: 4px solid #8AE87E; }
+  .c18 { border-top: 4px solid #E8A85A; }
+  .c19 { border-top: 4px solid #5AE8D8; }
+  .c20 { border-top: 4px solid #B0E85A; }
 
-  .b1 { background: #7EE8E8; }
-  .b2 { background: #F2A97E; }
-  .b3 { background: #E8735A; }
-  .b4 { background: #5B8A6F; }
-  .b5 { background: #F5D76E; }
-  .b6 { background: #7B9EC2; }
-  .b7 { background: #C97BE8; }
-  .b8 { background: #E87E7E; }
+  .bl1  { background: #7EE8E8; }  .bl2  { background: #F2A97E; }
+  .bl3  { background: #E8735A; }  .bl4  { background: #5B8A6F; }
+  .bl5  { background: #F5D76E; }  .bl6  { background: #7B9EC2; }
+  .bl7  { background: #C97BE8; }  .bl8  { background: #E87E7E; }
+  .bl9  { background: #6EC4A7; }  .bl10 { background: #F26B8A; }
+  .bl11 { background: #A07BE8; }  .bl12 { background: #E8C45A; }
+  .bl13 { background: #5AA8E8; }  .bl14 { background: #E85A5A; }
+  .bl15 { background: #7EE8B0; }  .bl16 { background: #E87EB0; }
+  .bl17 { background: #8AE87E; }  .bl18 { background: #E8A85A; }
+  .bl19 { background: #5AE8D8; }  .bl20 { background: #B0E85A; }
 
-  /* ─── SECCIÓN SOBRE CAROL ─── */
+  .bc1  { border-color: #7EE8E8; }  .bc2  { border-color: #F2A97E; }
+  .bc3  { border-color: #E8735A; }  .bc4  { border-color: #5B8A6F; }
+  .bc5  { border-color: #F5D76E; }  .bc6  { border-color: #7B9EC2; }
+  .bc7  { border-color: #C97BE8; }  .bc8  { border-color: #E87E7E; }
+  .bc9  { border-color: #6EC4A7; }  .bc10 { border-color: #F26B8A; }
+  .bc11 { border-color: #A07BE8; }  .bc12 { border-color: #E8C45A; }
+  .bc13 { border-color: #5AA8E8; }  .bc14 { border-color: #E85A5A; }
+  .bc15 { border-color: #7EE8B0; }  .bc16 { border-color: #E87EB0; }
+  .bc17 { border-color: #8AE87E; }  .bc18 { border-color: #E8A85A; }
+  .bc19 { border-color: #5AE8D8; }  .bc20 { border-color: #B0E85A; }
+
+  /* ─── SOBRE CAROL ─── */
   .sobre-carol {
-    background: linear-gradient(135deg, #1E1B18 0%, #2D2926 100%);
-    padding: 80px 32px;
+    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+    padding: 90px 40px;
     color: white;
   }
 
   .sobre-inner {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
+    grid-template-columns: auto 1fr;
+    gap: 64px;
     align-items: center;
   }
 
-  .sobre-logo img {
-    width: 200px;
-    height: 200px;
+  .sobre-img {
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
-    border: 4px solid var(--aqua);
-    box-shadow: 0 0 40px rgba(126,232,232,0.3);
+    object-fit: cover;
+    border: 5px solid var(--aqua);
+    box-shadow: 0 0 50px rgba(126,232,232,0.25);
   }
 
   .sobre-texto h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    margin-bottom: 18px;
-    line-height: 1.3;
+    font-size: 34px;
+    margin-bottom: 20px;
+    line-height: 1.25;
   }
 
   .sobre-texto h2 em { color: var(--aqua); font-style: italic; }
 
   .sobre-texto p {
     font-size: 15.5px;
-    line-height: 1.85;
-    opacity: 0.85;
-    margin-bottom: 14px;
+    line-height: 1.9;
+    opacity: 0.82;
+    margin-bottom: 16px;
     font-weight: 300;
   }
 
-  /* ─── COMENTARIOS DISQUS ─── */
-  .seccion-comentarios {
-    max-width: 860px;
+  /* ─── COMENTARIOS ─── */
+  .comentarios-wrap {
+    max-width: 900px;
     margin: 0 auto;
-    padding: 70px 32px;
+    padding: 80px 40px;
   }
 
-  .seccion-comentarios h2 {
+  .comentarios-wrap h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 8px;
   }
 
-  .seccion-comentarios h2 em { color: var(--coral); }
+  .comentarios-wrap h2 em { color: var(--coral); }
 
-  .seccion-comentarios p {
+  .comentarios-wrap > p {
     font-size: 15px;
     color: var(--texto-suave);
-    margin-bottom: 32px;
+    margin-bottom: 36px;
     font-weight: 300;
   }
 
-  .disqus-placeholder {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
+  /* ─── AD BANNER ─── */
+  .ad-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 10px 40px 30px;
     text-align: center;
-    border: 2px dashed var(--aqua);
-    color: var(--texto-suave);
-    font-size: 14px;
-    line-height: 1.7;
   }
 
-  .disqus-placeholder strong { color: var(--coral); display: block; font-size: 16px; margin-bottom: 8px; }
+  .ad-label {
+    font-size: 10px;
+    color: #BCC5D0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+  }
 
   /* ─── FOOTER ─── */
   footer {
-    background: #1E1B18;
+    background: #0F0F1A;
     color: white;
-    padding: 40px 32px;
+    padding: 48px 40px;
     text-align: center;
   }
 
-  footer p { font-size: 13px; opacity: 0.6; margin-bottom: 6px; }
-  footer strong { color: var(--aqua); opacity: 1; }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
 
-  /* ─── PUBLI (AdSense) ─── */
-  .ad-banner {
-    background: white;
-    border-radius: 12px;
-    border: 1px dashed #D0C8C0;
-    text-align: center;
-    padding: 20px;
-    margin: 32px auto;
-    max-width: 728px;
-    font-size: 12px;
-    color: #BBBBB;
-    color: var(--texto-suave);
+  .footer-logo img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--aqua);
+    object-fit: cover;
+  }
+
+  .footer-logo span {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+  }
+
+  .footer-logo em { color: var(--aqua); font-style: italic; }
+
+  footer p {
+    font-size: 13px;
+    opacity: 0.5;
+    margin-top: 8px;
+    line-height: 1.7;
   }
 
   /* ─── RESPONSIVE ─── */
-  @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; text-align: center; }
+  @media (max-width: 820px) {
+    nav { padding: 12px 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; text-align: center; padding: 60px 24px 40px; gap: 40px; }
     .hero-imagen { order: -1; }
     .hero-imagen img { width: 220px; height: 220px; }
-    .hero-deco { width: 260px; height: 260px; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    .sobre-inner { grid-template-columns: 1fr; text-align: center; }
-    .nav-links { display: none; }
+    .hero-deco { width: 270px; height: 270px; }
+    .hero-deco2 { width: 310px; height: 310px; }
+    .hero-texto p { margin: 0 auto 32px; }
+    .hero-badges { justify-content: center; }
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .seccion { padding: 60px 24px; }
+    .grid-categorias { grid-template-columns: 1fr; }
+    .sobre-inner { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+    .sobre-img { margin: 0 auto; }
+    .comentarios-wrap { padding: 60px 24px; }
+    footer { padding: 40px 24px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════
-     NAV
-══════════════════════════════ -->
+<!-- ══════ NAV ══════ -->
 <nav>
   <a class="nav-logo" href="#">
-    <!-- Reemplaza src con tu logo real -->
-    <img src="carol-logo.png" alt="Logo Soy Psico Carol" onerror="this.style.display='none'">
-    <span>Soy <em>Psico.</em> Carol</span>
+    <img src="carol-logo.png" alt="Soy Psico Carol">
+    <span class="nav-logo-text">Soy <em>Psico.</em> Carol</span>
   </a>
   <ul class="nav-links">
     <li><a href="#temas">Temas</a></li>
@@ -570,9 +646,7 @@
   <button class="nav-lang" onclick="alert('Versión en inglés próximamente 🚀')">🌐 English</button>
 </nav>
 
-<!-- ══════════════════════════════
-     HERO
-══════════════════════════════ -->
+<!-- ══════ HERO ══════ -->
 <section class="hero">
   <div class="hero-texto">
     <h1>Tu espacio de<br><em>salud mental</em><br>en familia</h1>
@@ -588,427 +662,1062 @@
   </div>
   <div class="hero-imagen">
     <div class="hero-deco"></div>
-    <img src="carol-logo.png" alt="Psicóloga Carol" onerror="this.style.background='linear-gradient(135deg,#7EE8E8,#F2A97E)';this.style.display='flex'">
+    <div class="hero-deco2"></div>
+    <img src="carol-logo.png" alt="Psicóloga Carol">
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     STATS
-══════════════════════════════ -->
-<div class="stats">
+<!-- ══════ STATS ══════ -->
+<div class="stats-wrap">
   <div class="stats-inner">
-    <div>
-      <span class="stat-num">20+</span>
-      <span class="stat-label">Categorías de contenido psicoeducativo</span>
-    </div>
-    <div>
-      <span class="stat-num">160+</span>
-      <span class="stat-label">Temas basados en evidencia científica</span>
-    </div>
-    <div>
-      <span class="stat-num">100%</span>
-      <span class="stat-label">Gratuito para familias y pacientes</span>
-    </div>
-    <div>
-      <span class="stat-num">∞</span>
-      <span class="stat-label">Nuevo contenido cada semana</span>
-    </div>
+    <div><span class="stat-num">20</span><span class="stat-label">Categorías de contenido psicoeducativo</span></div>
+    <div><span class="stat-num">160+</span><span class="stat-label">Temas basados en evidencia científica</span></div>
+    <div><span class="stat-num">100%</span><span class="stat-label">Gratuito para familias y pacientes</span></div>
+    <div><span class="stat-num">∞</span><span class="stat-label">Contenido nuevo cada semana</span></div>
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     BANNER PUBLICITARIO (AdSense)
-══════════════════════════════ -->
-<div class="ad-banner">
-  <!-- Aquí va tu código de Google AdSense cuando lo tengas aprobado -->
-  <!-- <ins class="adsbygoogle" ... ></ins> -->
-  <span style="opacity:0.4; font-size:11px;">Espacio publicitario · Google AdSense</span>
+<!-- ══════ AD BANNER 1 ══════ -->
+<div class="ad-wrap">
+  <span class="ad-label">Publicidad</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8688885729274409"
+       data-ad-slot="auto"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<!-- ══════════════════════════════
-     TEMAS PRINCIPALES
-══════════════════════════════ -->
+<!-- ══════ TEMAS ══════ -->
 <section class="seccion" id="temas">
   <div class="seccion-header">
-    <span class="etiqueta-seccion">Biblioteca de contenido</span>
+    <span class="etiqueta-seccion">Biblioteca psicoeducativa</span>
     <h2>Explora todos los <em>temas</em></h2>
-    <p>Haz clic en cualquier categoría para desplegar los subtemas. Cada uno tiene contenido psicoeducativo completo, práctico y basado en evidencia.</p>
+    <p>Haz clic en cualquier categoría para desplegar los subtemas. Cada uno contiene información verificada, práctica y basada en evidencia científica actualizada.</p>
   </div>
 
   <div class="grid-categorias">
 
-    <!-- CATEGORÍA 1 -->
+    <!-- ── CAT 1: NEURODESARROLLO ── -->
     <div class="categoria-card c1">
-      <div class="cat-barra b1"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl1"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">🧠</span>
-        <div class="cat-titulo">
-          <h3>Neurodesarrollo</h3>
-          <span>9 temas · TDAH, TEA, aprendizaje y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Neurodesarrollo</h3><span>9 temas · TDAH, TEA, aprendizaje y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>TDAH: qué es y qué no es</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>El TDAH (Trastorno por Déficit de Atención e Hiperactividad)</strong> es una condición neurológica del desarrollo que afecta la capacidad de regular la atención, el impulso y la actividad motora. No es falta de voluntad ni mala crianza.</p>
-            <p>Existen tres presentaciones: predominantemente inatenta, predominantemente hiperactiva/impulsiva, y combinada. Cada niño lo vive de forma única.</p>
-            <p>El diagnóstico es clínico — lo realiza un psicólogo o psiquiatra tras evaluación completa. Requiere que los síntomas estén presentes en más de un contexto (casa y escuela) y desde antes de los 12 años.</p>
-            <span class="tag-evidencia">✓ Basado en DSM-5-TR · APA 2022</span>
+          <div class="subtema-contenido bc1">
+            <p><strong>El TDAH</strong> es una condición neurológica del desarrollo que afecta la regulación de la atención, el impulso y la actividad. No es falta de voluntad, mala crianza ni "exceso de pantallas".</p>
+            <p>Existen tres presentaciones: predominantemente inatenta, predominantemente hiperactiva/impulsiva, y combinada. Cada persona lo vive de forma única — dos niños con TDAH pueden parecerse muy poco.</p>
+            <p>El diagnóstico lo realiza un profesional tras evaluación completa. Los síntomas deben estar presentes en más de un contexto (casa y escuela) y desde antes de los 12 años.</p>
+            <span class="tag-evidencia">✓ DSM-5-TR · APA 2022</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Trastorno del Espectro Autista (TEA)</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>El TEA es una diferencia neurológica</strong> que afecta la comunicación social y produce patrones de comportamiento repetitivos o intereses muy focalizados. No es una enfermedad — es una forma distinta de procesar el mundo.</p>
-            <p>Se habla de "espectro" porque la variabilidad es enorme: desde niños con grandes capacidades verbales hasta quienes necesitan apoyo intensivo. El nivel de soporte necesario varía, no la valía de la persona.</p>
-            <p>La detección temprana — antes de los 3 años — mejora significativamente el pronóstico al permitir intervenciones que potencian el desarrollo.</p>
-            <span class="tag-evidencia">✓ Basado en DSM-5-TR · APA 2022</span>
+          <div class="subtema-contenido bc1">
+            <p><strong>El TEA</strong> es una diferencia neurológica que afecta la comunicación social y produce patrones de comportamiento repetitivos o intereses muy focalizados. No es una enfermedad — es una forma distinta de procesar el mundo.</p>
+            <p>Se llama "espectro" porque la variabilidad es enorme: desde niños con alto rendimiento verbal hasta quienes necesitan apoyo intensivo. El nivel de soporte varía, no la valía de la persona.</p>
+            <p>La detección temprana — idealmente antes de los 3 años — mejora significativamente el pronóstico al permitir intervenciones que potencian el desarrollo en las ventanas más sensibles.</p>
+            <span class="tag-evidencia">✓ DSM-5-TR · APA 2022</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Trastornos del aprendizaje</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc1">
+            <p><strong>La dislexia, disgrafía y discalculia</strong> son diferencias en el procesamiento neurológico que afectan la lectura, la escritura o el cálculo, respectivamente. No indican baja inteligencia.</p>
+            <p>Un niño con dislexia puede tener un CI superior al promedio y aun así luchar con la decodificación fonológica. El problema no está en el esfuerzo — está en cómo el cerebro procesa ciertos símbolos.</p>
+            <p>Con estrategias adecuadas (tiempo extra, aprendizaje multisensorial, tecnología de apoyo) estos niños pueden tener un rendimiento escolar excelente. La intervención temprana marca la diferencia.</p>
+            <span class="tag-evidencia">✓ IDA · International Dyslexia Association 2023</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Funciones ejecutivas</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>Las funciones ejecutivas son las habilidades mentales</strong> que nos permiten planificar, iniciar, organizar, controlar impulsos y regular emociones. Se desarrollan principalmente en el lóbulo prefrontal y maduran hasta los 25 años.</p>
-            <p>Incluyen: memoria de trabajo, flexibilidad cognitiva, control inhibitorio, planificación y regulación emocional. Son la base del aprendizaje y del comportamiento adaptativo.</p>
-            <p>Se pueden fortalecer con práctica, rutinas claras, juego y entornos predecibles. No son fijas — son entrenables.</p>
-            <span class="tag-evidencia">✓ Basado en Diamond, A. (2013) · Annual Review of Psychology</span>
+          <div class="subtema-contenido bc1">
+            <p><strong>Las funciones ejecutivas</strong> son las habilidades mentales que permiten planificar, iniciar, organizar, inhibir impulsos y regular emociones. Se desarrollan en el lóbulo prefrontal y maduran hasta los 25 años.</p>
+            <p>Incluyen: memoria de trabajo, flexibilidad cognitiva, control inhibitorio, planificación y regulación emocional. Son la base del aprendizaje adaptativo y del comportamiento social.</p>
+            <p>Se pueden fortalecer con rutinas predecibles, juego estructurado, sueño adecuado y entornos con poca carga de estrés crónico. No son fijas — son entrenables.</p>
+            <span class="tag-evidencia">✓ Diamond, A. (2013) · Annual Review of Psychology</span>
           </div>
         </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Procesamiento sensorial</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc1">
+            <p><strong>El procesamiento sensorial</strong> es la manera en que el sistema nervioso recibe, organiza e interpreta la información del entorno. Algunos niños lo procesan de forma atípica — siendo hiper o hiposensibles.</p>
+            <p>Un niño hipersensible puede sentir el roce de la etiqueta de la ropa como un dolor real, o bloquearse en entornos ruidosos. Esto no es capricho — es neurología.</p>
+            <p>La terapia ocupacional con enfoque sensorial es la intervención más respaldada. En casa, identificar los "disparadores" y crear ambientes predecibles reduce significativamente el malestar.</p>
+            <span class="tag-evidencia">✓ Ayres, A.J. · Sensory Integration Theory</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Desarrollo por etapas (0–18 años)</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc1">
+            <p><strong>Cada etapa del desarrollo tiene tareas propias:</strong> de 0 a 3 años el vínculo y la regulación; de 3 a 6 la autonomía y el lenguaje; de 6 a 12 las habilidades sociales y académicas; de 12 a 18 la identidad y la separación.</p>
+            <p>Conocer qué es esperable en cada etapa ayuda a los padres a no patologizar lo normal ni a ignorar señales reales de alerta.</p>
+            <p>Una conducta problemática en la etapa equivocada puede ser señal de algo que necesita atención — o simplemente un salto de desarrollo perfectamente normal.</p>
+            <span class="tag-evidencia">✓ Erikson, E. · Teoría del Desarrollo Psicosocial</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- CATEGORÍA 2 -->
+    <!-- ── CAT 2: CRIANZA ── -->
     <div class="categoria-card c2">
-      <div class="cat-barra b2"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl2"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">👶</span>
-        <div class="cat-titulo">
-          <h3>Crianza y desarrollo infantil</h3>
-          <span>10 temas · Apego, límites, autoestima y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Crianza y desarrollo infantil</h3><span>10 temas · Apego, límites, autoestima y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Estilos de crianza</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>La investigación identifica cuatro estilos principales:</strong> autoritario (exige sin explicar), permisivo (cede sin límites), negligente (poco involucrado) y democrático/autoritativo (combina calidez con estructura clara).</p>
-            <p>El estilo democrático está consistentemente asociado a mejores resultados en salud mental infantil, autoestima, rendimiento académico y habilidades sociales.</p>
-            <p>No existe la crianza perfecta. Lo importante no es el estilo "puro" sino la consistencia, la reparación después del error y el vínculo afectivo estable.</p>
-            <span class="tag-evidencia">✓ Basado en Baumrind, D. (1991) · Child Development</span>
+          <div class="subtema-contenido bc2">
+            <p><strong>Cuatro estilos principales:</strong> autoritario (exige sin explicar), permisivo (cede sin límites), negligente (poco involucrado) y democrático (calidez + estructura). La investigación apunta consistentemente al democrático como el más beneficioso.</p>
+            <p>El estilo democrático se asocia a mejor salud mental, autoestima, rendimiento académico y habilidades sociales en los hijos. No exige perfección — exige consistencia y reparación después del error.</p>
+            <p>Los estilos no son categorías rígidas — la mayoría de padres oscilan entre ellos según el estrés, el contexto cultural y la etapa del hijo.</p>
+            <span class="tag-evidencia">✓ Baumrind, D. (1991) · Child Development</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Apego: tipos y qué significa</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>El apego es el vínculo emocional profundo</strong> que el niño forma con sus cuidadores principales en los primeros años. Es la base de la seguridad emocional para toda la vida.</p>
-            <p>El apego seguro se forma cuando el cuidador responde de forma sensible y consistente. El niño aprende que el mundo es seguro y que puede explorar porque tiene una base a quien volver.</p>
-            <p>Los estilos inseguros (ansioso, evitativo, desorganizado) no son sentencias — se pueden trabajar en terapia y mejorar en cualquier momento del desarrollo.</p>
-            <span class="tag-evidencia">✓ Basado en Bowlby & Ainsworth · Teoría del Apego</span>
+          <div class="subtema-contenido bc2">
+            <p><strong>El apego</strong> es el vínculo emocional profundo que el niño forma con sus cuidadores principales. Es la base de la seguridad emocional para toda la vida.</p>
+            <p>El apego seguro se forma cuando el cuidador responde de forma sensible y consistente. El niño aprende que el mundo es seguro y puede explorar porque tiene una base a quien volver.</p>
+            <p>Los estilos inseguros (ansioso, evitativo, desorganizado) no son sentencias. Se pueden trabajar en terapia y mejorar en cualquier momento del desarrollo — incluso en la adultez.</p>
+            <span class="tag-evidencia">✓ Bowlby & Ainsworth · Teoría del Apego</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Límites y disciplina positiva</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>Los límites no son castigo</strong> — son estructuras que dan seguridad. Un niño sin límites no se siente libre: se siente solo y asustado.</p>
+          <div class="subtema-contenido bc2">
+            <p><strong>Los límites no son castigo</strong> — son estructuras que dan seguridad. Un niño sin límites no se siente libre: se siente solo y asustado porque nadie está a cargo.</p>
             <p>La disciplina positiva plantea que los niños se comportan mejor cuando se sienten conectados, capaces y contribuyentes. El objetivo no es el control inmediato sino la autorregulación a largo plazo.</p>
-            <p>Herramientas clave: consecuencias naturales y lógicas (no castigo arbitrario), validación emocional antes de corregir, y enfocarse en la solución más que en el error.</p>
-            <span class="tag-evidencia">✓ Basado en Jane Nelsen · Positive Discipline</span>
+            <p>Claves prácticas: consecuencias naturales y lógicas (no castigo arbitrario), validar la emoción antes de corregir la conducta, y enfocarse en la solución más que en el error.</p>
+            <span class="tag-evidencia">✓ Nelsen, J. · Positive Discipline (2006)</span>
           </div>
         </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Validación emocional</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc2">
+            <p><strong>Validar no es estar de acuerdo</strong> — es reconocer que lo que siente el niño tiene sentido desde su perspectiva. Es la diferencia entre "no llores por eso" y "entiendo que te duele mucho".</p>
+            <p>Cuando los cuidadores invalidan consistentemente las emociones, los niños aprenden a desconfiarse a sí mismos, a suprimir lo que sienten o a intensificar sus reacciones para ser escuchados.</p>
+            <p>La validación no requiere horas — requiere 30 segundos de contacto real: mirar a los ojos, nombrar lo que ves, y no apresurarte a resolver.</p>
+            <span class="tag-evidencia">✓ Linehan, M. & Gottman, J. · Emotion Coaching</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Autoestima en niños</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc2">
+            <p><strong>La autoestima infantil no se construye con elogios vacíos</strong> ("eres el mejor") sino con experiencias de competencia real, vínculos seguros y mensajes consistentes de que el niño importa como es.</p>
+            <p>El elogio más efectivo es específico y orientado al proceso: "veo que trabajaste muy duro en eso" en vez de "eres muy inteligente". El segundo fija una identidad que el niño luego teme perder.</p>
+            <p>Los niños con autoestima sana cometen errores, los enfrentan y los reparan — no son niños sin problemas, son niños que saben que los problemas no los definen.</p>
+            <span class="tag-evidencia">✓ Dweck, C. · Mindset (2006)</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- CATEGORÍA 3 -->
+    <!-- ── CAT 3: CONDUCTA INFANTIL ── -->
     <div class="categoria-card c3">
-      <div class="cat-barra b3"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl3"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">🧒</span>
-        <div class="cat-titulo">
-          <h3>Conducta infantil</h3>
-          <span>9 temas · Rabietas, impulsividad, conductas y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Conducta infantil</h3><span>9 temas · Rabietas, impulsividad, agresividad y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Rabietas: qué hay detrás</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>Las rabietas son explosiones emocionales normales</strong> en niños de 1 a 4 años porque el cerebro prefrontal — el que regula emociones — aún no está desarrollado. No son manipulación.</p>
-            <p>Ocurren cuando el niño siente frustración, hambre, cansancio o necesidad de control que no puede expresar con palabras. La intensidad no indica un problema — indica una necesidad.</p>
-            <p>Lo que funciona: mantener la calma del adulto, no ceder a la demanda pero sí validar la emoción, y ofrecer contacto físico cuando el niño lo permite. Lo que no funciona: gritar, razonar en el pico de la rabieta o ignorar completamente.</p>
-            <span class="tag-evidencia">✓ Basado en evidencia de neurociencia del desarrollo</span>
+          <div class="subtema-contenido bc3">
+            <p><strong>Las rabietas son explosiones emocionales normales</strong> en niños de 1 a 4 años porque el cerebro prefrontal aún no está desarrollado para regular emociones intensas. No son manipulación.</p>
+            <p>Ocurren cuando el niño siente frustración, hambre, cansancio o necesidad de control que no puede expresar con palabras. La intensidad no indica un problema — indica una necesidad no satisfecha.</p>
+            <p>Lo que funciona: mantener la calma del adulto, no ceder a la demanda pero sí validar la emoción, y ofrecer contacto físico cuando el niño lo permite. Lo que no funciona: razonar en el pico, gritar o ignorar completamente.</p>
+            <span class="tag-evidencia">✓ Siegel, D. & Bryson, T. · The Whole-Brain Child</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Agresividad infantil</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc3">
+            <p><strong>La agresividad en niños pequeños es frecuentemente comunicativa</strong> — morder, pegar o empujar puede ser la única forma que tienen de decir "estoy abrumado" o "quiero eso".</p>
+            <p>La agresividad que persiste más allá de los 4-5 años, que ocurre en múltiples contextos y que es intencional y calculada merece evaluación profesional.</p>
+            <p>Lo que sí ayuda: nombrar la emoción ("estás muy enojado"), enseñar alternativas concretas ("cuando estés enojado, puedes decirlo con palabras"), y no responder con agresividad al comportamiento agresivo.</p>
+            <span class="tag-evidencia">✓ Kazdin, A. · Parent Management Training</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Refuerzo positivo: cómo usarlo bien</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>El refuerzo positivo</strong> es cualquier consecuencia que aumenta la probabilidad de que una conducta se repita. No se limita a premios — incluye atención, elogio específico y privilegios.</p>
-            <p>El elogio más efectivo no es "eres muy listo" (que fija una identidad) sino "veo que trabajaste muy duro en esto" (que refuerza el esfuerzo y la process).</p>
-            <p>El error más común es usar el refuerzo de forma inconsistente. La consistencia y la inmediatez (reforzar justo después de la conducta) son las claves de su efectividad.</p>
-            <span class="tag-evidencia">✓ Basado en B.F. Skinner & Dweck, C. (growth mindset)</span>
+          <div class="subtema-contenido bc3">
+            <p><strong>El refuerzo positivo</strong> es cualquier consecuencia que aumenta la probabilidad de que una conducta se repita. No se limita a premios materiales — incluye atención, elogio específico y tiempo de calidad.</p>
+            <p>El error más común es usarlo de forma inconsistente. La consistencia y la inmediatez (reforzar justo después de la conducta) son las claves de su efectividad.</p>
+            <p>El refuerzo positivo es más poderoso que el castigo para establecer conductas nuevas. El castigo puede suprimir una conducta, pero no enseña cuál es la alternativa correcta.</p>
+            <span class="tag-evidencia">✓ Skinner, B.F. · Operant Conditioning</span>
           </div>
         </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Impulsividad: qué es y cómo acompañarla</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc3">
+            <p><strong>La impulsividad</strong> es la tendencia a actuar antes de pensar. En niños pequeños es esperable — su corteza prefrontal aún está en construcción. El problema surge cuando es extrema o persiste más allá de lo esperado.</p>
+            <p>Estrategias que ayudan: crear pausas artificiales ("respira primero"), anticipar situaciones difíciles, y reducir variables estresantes en el ambiente (hambre, cansancio, sobrestimulación).</p>
+            <p>El autocontrol es como un músculo: se desarrolla con práctica y se agota con el estrés. Un niño "portado mal" al final del día puede estar simplemente agotado de su propio esfuerzo de regulación.</p>
+            <span class="tag-evidencia">✓ Baumeister, R. · Ego Depletion Research</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- CATEGORÍA 4 -->
+    <!-- ── CAT 4: CONTEXTO ESCOLAR ── -->
     <div class="categoria-card c4">
-      <div class="cat-barra b4"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl4"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">🎓</span>
-        <div class="cat-titulo">
-          <h3>Contexto escolar</h3>
-          <span>10 temas · Bullying, adaptación, aprendizaje y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Contexto escolar</h3><span>10 temas · Bullying, ansiedad escolar, motivación y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Bullying: señales y cómo actuar</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>El bullying es acoso intencional, repetido y con desequilibrio de poder</strong> — no es un conflicto entre iguales. La diferencia importa porque la intervención es distinta.</p>
-            <p>Señales en el niño: cambios de humor al hablar de la escuela, quejas físicas los días de colegio, retraimiento, pérdida de pertenencias sin explicación, o miedo al transporte escolar.</p>
-            <p>Lo primero es creerle. Lo segundo es no pedirle que lo "resuelva solo". Lo tercero es contactar la escuela con documentación concreta (fechas, hechos). La intervención temprana reduce significativamente la duración y el impacto.</p>
-            <span class="tag-evidencia">✓ Basado en Olweus, D. · Bullying Prevention Program</span>
+          <div class="subtema-contenido bc4">
+            <p><strong>El bullying es acoso intencional, repetido y con desequilibrio de poder</strong> — no es un conflicto entre iguales. Esta diferencia importa porque la intervención es distinta.</p>
+            <p>Señales en el niño: cambios de ánimo al hablar de la escuela, quejas físicas frecuentes, retraimiento, pérdida de pertenencias, miedo al transporte escolar o rechazo a ir.</p>
+            <p>Lo primero es creerle. Lo segundo es no pedirle que lo resuelva solo. Lo tercero es contactar la escuela con documentación concreta. La intervención temprana reduce significativamente la duración y el impacto.</p>
+            <span class="tag-evidencia">✓ Olweus, D. · Bullying Prevention Program</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Ansiedad escolar</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
+          <div class="subtema-contenido bc4">
             <p><strong>La ansiedad escolar</strong> incluye desde nervios antes de un examen hasta rechazo escolar severo con síntomas físicos. Es uno de los motivos de consulta más frecuentes en psicología infantil.</p>
-            <p>Puede manifestarse como dolor de barriga recurrente, llanto antes de entrar al colegio, pesadillas, dificultad para concentrarse o quejas frecuentes de enfermedad. El cuerpo habla lo que las palabras no pueden decir aún.</p>
-            <p>La respuesta más efectiva combina validación emocional (no minimizar), exposición gradual al contexto escolar (no evitación total) y coordinación entre familia y escuela.</p>
-            <span class="tag-evidencia">✓ Basado en Kearney, C. · School Refusal Behavior</span>
+            <p>Puede manifestarse como dolor de barriga recurrente los días de escuela, llanto al entrar, dificultad para concentrarse o pesadillas relacionadas con el colegio. El cuerpo habla lo que las palabras no pueden.</p>
+            <p>La respuesta más efectiva combina validación emocional, exposición gradual (no evitación total) y coordinación activa entre familia y escuela.</p>
+            <span class="tag-evidencia">✓ Kearney, C. · School Refusal Behavior (2008)</span>
           </div>
         </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Motivación académica</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc4">
+            <p><strong>La motivación intrínseca</strong> (querer aprender por curiosidad propia) es más duradera y efectiva que la extrínseca (notas, premios). La clave es no sofocar la primera con demasiada presión sobre la segunda.</p>
+            <p>Los niños están motivados naturalmente cuando sienten que son competentes, tienen cierta autonomía y pertenecen a una comunidad. Estos tres elementos son la base de la motivación según la Teoría de la Autodeterminación.</p>
+            <p>Preguntar "¿qué aprendiste hoy?" en vez de "¿qué nota sacaste?" es un cambio pequeño con gran impacto en la relación del niño con el aprendizaje.</p>
+            <span class="tag-evidencia">✓ Deci & Ryan · Self-Determination Theory</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Inclusión y necesidades educativas especiales</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc4">
+            <p><strong>La inclusión educativa</strong> no es solo tener al niño con necesidades especiales en el aula — es adaptar el entorno, los métodos y las expectativas para que todos puedan aprender con dignidad.</p>
+            <p>Los apoyos más efectivos incluyen: adaptaciones curriculares individualizadas, trabajo colaborativo entre psicólogo, docente y familia, y pares de apoyo entre estudiantes.</p>
+            <p>Un niño con NEE en un entorno inclusivo bien implementado tiene mejores resultados académicos, sociales y emocionales que en entornos segregados. La clave es el "bien implementado".</p>
+            <span class="tag-evidencia">✓ UNESCO · Guidelines for Inclusion 2022</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- CATEGORÍA 5 -->
+    <!-- ── CAT 5: ADOLESCENCIA ── -->
     <div class="categoria-card c5">
-      <div class="cat-barra b5"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl5"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">👦</span>
-        <div class="cat-titulo">
-          <h3>Adolescencia</h3>
-          <span>10 temas · Identidad, redes sociales, sexualidad y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Adolescencia</h3><span>10 temas · Identidad, redes sociales, sexualidad y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>El cerebro adolescente</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>El cerebro adolescente no está "roto" — está en construcción.</strong> El sistema límbico (emociones, placer, riesgo) madura antes que el lóbulo prefrontal (planificación, control de impulsos). Eso explica muchas conductas.</p>
-            <p>Esta asimetría es biológicamente normal y tiene un propósito evolutivo: empujar al joven fuera del nido familiar para explorar. El problema surge cuando el entorno no ofrece opciones seguras de exploración.</p>
-            <p>La búsqueda de aprobación del grupo de pares es máxima en esta etapa — no por superficialidad sino porque el cerebro registra el rechazo social como amenaza física real.</p>
-            <span class="tag-evidencia">✓ Basado en Steinberg, L. · Age of Opportunity (2014)</span>
+          <div class="subtema-contenido bc5">
+            <p><strong>El cerebro adolescente no está "roto" — está en construcción.</strong> El sistema límbico (emociones, placer, riesgo) madura antes que el lóbulo prefrontal (planificación, control de impulsos). Eso explica mucho.</p>
+            <p>Esta asimetría es biológicamente normal y tiene propósito evolutivo: empujar al joven fuera del nido para explorar el mundo. El problema surge cuando el entorno no ofrece opciones seguras de exploración.</p>
+            <p>La búsqueda de aprobación del grupo de pares es máxima en esta etapa — el cerebro adolescente registra el rechazo social con la misma intensidad que una amenaza física real.</p>
+            <span class="tag-evidencia">✓ Steinberg, L. · Age of Opportunity (2014)</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Identidad y autoestima en la adolescencia</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc5">
+            <p><strong>La tarea central de la adolescencia es construir una identidad propia</strong> — separada de los padres pero apoyada en los vínculos con ellos. Esta tensión entre independencia y conexión es normal y necesaria.</p>
+            <p>Los adolescentes prueban roles, grupos, creencias e incluso estéticas como parte de ese proceso. Lo que parece contradicción o inestabilidad es, en muchos casos, exploración sana.</p>
+            <p>La autoestima adolescente es especialmente sensible a la comparación social. Los padres que mantienen conversaciones abiertas (sin juzgar) tienen mayor influencia que los que intentan controlar.</p>
+            <span class="tag-evidencia">✓ Erikson, E. · Identity vs. Role Confusion</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Redes sociales y salud mental</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
+          <div class="subtema-contenido bc5">
             <p><strong>El impacto de las redes sociales no es uniforme.</strong> Depende del tipo de uso (activo vs. pasivo), el contenido consumido, la cantidad de horas y la vulnerabilidad previa del adolescente.</p>
-            <p>La comparación social en redes activa los mismos circuitos cerebrales que el rechazo interpersonal directo. Los feeds de imagen corporal son el área de mayor riesgo documentado, especialmente en chicas.</p>
-            <p>En vez de prohibir (ineficaz después de los 13), la estrategia con mayor evidencia es el consumo crítico y consciente: hablar abiertamente sobre lo que se ve, cuestionar lo que parece "real" y establecer horarios en familia.</p>
-            <span class="tag-evidencia">✓ Basado en Twenge, J.M. & Haidt, J. (2023)</span>
+            <p>La comparación social en redes activa los mismos circuitos cerebrales que el rechazo interpersonal directo. Los feeds de imagen corporal tienen el mayor riesgo documentado, especialmente en chicas.</p>
+            <p>La estrategia más efectiva no es prohibir (ineficaz después de los 13) sino el consumo crítico y consciente: hablar sobre lo que se ve, cuestionar lo que parece "real" y establecer horarios en familia.</p>
+            <span class="tag-evidencia">✓ Twenge, J.M. & Haidt, J. · The Anxious Generation (2024)</span>
           </div>
         </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Conductas de riesgo en adolescentes</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc5">
+            <p><strong>Cierto nivel de toma de riesgos es normal y adaptativo</strong> en la adolescencia — es parte del proceso de individuación y prueba de límites. El problema es cuando el riesgo pone en juego la seguridad real.</p>
+            <p>Los factores protectores más potentes son: un adulto de confianza (no necesariamente un padre), sentido de pertenencia a un grupo sano, propósito de vida y acceso a actividades que generen logro real.</p>
+            <p>La conversación abierta sobre drogas, sexo y riesgos no aumenta su probabilidad — la reduce. Los adolescentes que hablan con sus padres sobre estos temas toman decisiones más seguras.</p>
+            <span class="tag-evidencia">✓ Resnick, M. · Add Health Study</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- CATEGORÍA 6 -->
+    <!-- ── CAT 6: FAMILIA ── -->
     <div class="categoria-card c6">
-      <div class="cat-barra b6"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl6"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">👨‍👩‍👧</span>
-        <div class="cat-titulo">
-          <h3>Familia</h3>
-          <span>10 temas · Comunicación, conflictos, divorcio y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Familia</h3><span>10 temas · Comunicación, conflictos, divorcio y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Comunicación familiar efectiva</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>La comunicación familiar no es solo hablar</strong> — es crear condiciones para que todos puedan ser escuchados sin miedo al juicio. Los patrones comunicativos se aprenden y se pueden cambiar.</p>
-            <p>Las familias con mejor salud comunicativa tienen en común: escucha activa (sin interrumpir ni resolver de inmediato), expresión de necesidades en primera persona ("yo siento" en vez de "tú siempre"), y momentos regulares de conexión sin pantallas.</p>
-            <p>La cena familiar sin dispositivos, aunque sean 20 minutos, es una de las intervenciones con más evidencia para el bienestar emocional de los hijos.</p>
-            <span class="tag-evidencia">✓ Basado en Gottman, J. · The Relationship Cure</span>
+          <div class="subtema-contenido bc6">
+            <p><strong>La comunicación familiar no es solo hablar</strong> — es crear condiciones para que todos puedan expresarse sin miedo al juicio. Los patrones comunicativos se aprenden y se pueden cambiar.</p>
+            <p>Las familias con mejor salud comunicativa tienen: escucha activa sin resolver de inmediato, expresión en primera persona ("yo siento" en vez de "tú siempre"), y momentos regulares de conexión sin pantallas.</p>
+            <p>La cena familiar sin dispositivos, aunque sean 20 minutos, es una de las intervenciones con más evidencia para el bienestar emocional de los hijos — sencilla, gratuita y accesible para cualquier familia.</p>
+            <span class="tag-evidencia">✓ Gottman, J. · The Relationship Cure (2001)</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Separación y divorcio con hijos</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>Lo que más protege a los hijos durante un divorcio no es que los padres sigan juntos,</strong> sino que el conflicto entre ellos sea bajo y que ambos mantengan una relación afectiva estable con el niño.</p>
-            <p>Los niños no necesitan todos los detalles — necesitan saber que no es su culpa, que ambos padres los siguen amando y que su vida cotidiana tendrá la mayor estabilidad posible.</p>
+          <div class="subtema-contenido bc6">
+            <p><strong>Lo que más protege a los hijos durante un divorcio</strong> no es que los padres sigan juntos, sino que el conflicto entre ellos sea bajo y que ambos mantengan una relación afectiva estable con el niño.</p>
+            <p>Los niños no necesitan todos los detalles — necesitan saber que no es su culpa, que ambos los siguen amando y que su vida cotidiana tendrá la mayor estabilidad posible.</p>
             <p>Ponerlos de mensajeros, hablar mal del otro progenitor frente a ellos o pedirles que "elijan" son las conductas con mayor impacto negativo documentado en el desarrollo emocional infantil.</p>
-            <span class="tag-evidencia">✓ Basado en Emery, R. · The Truth About Children and Divorce</span>
+            <span class="tag-evidencia">✓ Emery, R. · The Truth About Children and Divorce</span>
           </div>
         </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Roles familiares y triangulación</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc6">
+            <p><strong>En familias con alta conflictividad</strong>, los hijos frecuentemente son triangulados — usados como aliados, mensajeros o árbitros en conflictos que no les corresponden. Esto tiene costo emocional real.</p>
+            <p>El hijo "parentalizado" (que cuida a sus padres emocionalmente) puede parecer maduro y responsable, pero carga con un peso que interfiere en su propio desarrollo.</p>
+            <p>Los roles familiares rígidos (el responsable, el problemático, el invisible) son respuestas adaptativas al sistema familiar, no rasgos de personalidad innatos. Pueden cambiar cuando el sistema cambia.</p>
+            <span class="tag-evidencia">✓ Bowen, M. · Family Systems Theory</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Crianza compartida</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc6">
+            <p><strong>La crianza compartida exitosa</strong> no requiere que los padres se lleven bien — requiere que ambos prioricen el bienestar del hijo por encima del conflicto entre ellos.</p>
+            <p>Los acuerdos claros sobre rutinas, normas y comunicación (preferiblemente por escrito) reducen los puntos de fricción y protegen al hijo de quedar en medio.</p>
+            <p>Las apps de co-parentalidad (OurFamilyWizard, TalkingParents) han demostrado reducir el conflicto entre padres separados al mantener la comunicación formal y documentada.</p>
+            <span class="tag-evidencia">✓ Pruett, M. · Your Divorce Advisor</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- CATEGORÍA 7 -->
+    <!-- ── CAT 7: REGULACIÓN EMOCIONAL ── -->
     <div class="categoria-card c7">
-      <div class="cat-barra b7"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl7"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">💬</span>
-        <div class="cat-titulo">
-          <h3>Regulación emocional</h3>
-          <span>10 temas · Ansiedad, ira, inteligencia emocional y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Regulación emocional</h3><span>10 temas · Ansiedad, ira, inteligencia emocional y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>¿Qué son las emociones?</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>Las emociones son respuestas neurobiológicas</strong> ante situaciones que el cerebro evalúa como relevantes para nuestra supervivencia o bienestar. No son buenas ni malas — son información.</p>
-            <p>Todas las emociones cumplen una función: el miedo protege, la tristeza pide cuidado, la rabia defiende límites, la alegría refuerza conexión. El problema no es sentirlas — es no saber qué hacer con ellas.</p>
-            <p>La inteligencia emocional no es no llorar ni no enojarse. Es poder identificar qué siento, entender por qué lo siento y decidir cómo respondo — en vez de solo reaccionar.</p>
-            <span class="tag-evidencia">✓ Basado en Goleman, D. & Barrett, L.F. (2017)</span>
+          <div class="subtema-contenido bc7">
+            <p><strong>Las emociones son respuestas neurobiológicas</strong> ante situaciones que el cerebro evalúa como relevantes para el bienestar o la supervivencia. No son buenas ni malas — son información.</p>
+            <p>Todas cumplen una función: el miedo protege, la tristeza pide cuidado, la rabia defiende límites, la alegría refuerza conexión. El problema no es sentirlas — es no saber qué hacer con ellas.</p>
+            <p>La inteligencia emocional no es no llorar ni no enojarse. Es poder identificar qué siento, entender por qué lo siento y decidir cómo respondo — en vez de solo reaccionar automáticamente.</p>
+            <span class="tag-evidencia">✓ Goleman, D. & Barrett, L.F. · How Emotions Are Made (2017)</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Ansiedad: señales y estrategias</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>La ansiedad es la emoción del "¿y si...?"</strong> — anticipa peligros futuros para protegernos. En dosis moderadas es adaptativa. Se convierte en problema cuando es desproporcionada, persistente e interfiere con la vida diaria.</p>
-            <p>En niños se manifiesta frecuentemente como síntomas físicos (dolor de barriga, cabeza, fatiga), no necesariamente como "preocupación" verbalizada. En adolescentes puede parecerse más a irritabilidad que a tristeza.</p>
-            <p>Estrategias con evidencia: respiración diafragmática lenta, exposición gradual a lo temido (no evitación), reestructuración cognitiva de pensamientos catastrofistas, y movimiento físico regular.</p>
-            <span class="tag-evidencia">✓ Basado en Beck, A.T. · Cognitive Therapy of Anxiety</span>
+          <div class="subtema-contenido bc7">
+            <p><strong>La ansiedad es la emoción del "¿y si...?"</strong> — anticipa peligros futuros para protegernos. En dosis moderadas es adaptativa. Se convierte en problema cuando es desproporcionada, persistente e interfiere con la vida.</p>
+            <p>En niños se manifiesta frecuentemente como síntomas físicos (dolor de barriga, cabeza, fatiga). En adolescentes puede parecerse más a irritabilidad que a tristeza o miedo.</p>
+            <p>Estrategias con evidencia: respiración diafragmática lenta (activa el sistema parasimpático), exposición gradual a lo temido, reestructuración de pensamientos catastrofistas y ejercicio físico regular.</p>
+            <span class="tag-evidencia">✓ Beck, A.T. · Cognitive Therapy of Anxiety Disorders</span>
           </div>
         </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Manejo de la ira</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc7">
+            <p><strong>La ira no es el problema</strong> — es lo que hacemos con ella. Es una emoción sana que señala que algo importante está siendo amenazado o violado. Suprimirla no la elimina: la desplaza.</p>
+            <p>Cuando la ira surge, el cerebro literalmente pierde acceso temporal al pensamiento racional (lo que Goleman llamó "secuestro amigdalar"). En ese estado no sirve razonar — primero hay que regular el cuerpo.</p>
+            <p>Técnicas efectivas: pausa de 20 minutos antes de responder, movimiento físico, respiración lenta, y después — cuando el sistema está calmado — comunicar la necesidad que estaba detrás del enojo.</p>
+            <span class="tag-evidencia">✓ Goleman, D. · Emotional Intelligence (1995)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Tolerancia a la frustración</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc7">
+            <p><strong>La tolerancia a la frustración</strong> es la capacidad de enfrentar obstáculos, demoras o fracasos sin desmoronarse. Se desarrolla con la práctica — y curiosamente, se desarrolla al permitir que los niños experimenten frustración moderada.</p>
+            <p>Cuando los adultos resuelven todos los problemas del niño antes de que tenga la oportunidad de enfrentarlos, le roban la experiencia de descubrir que puede tolerarlos.</p>
+            <p>El mensaje más poderoso que podemos dar: "Sé que esto es difícil. Confío en que puedes manejarlo. Aquí estoy si me necesitas." No resolver — acompañar.</p>
+            <span class="tag-evidencia">✓ Ellis, A. · Rational Emotive Behavior Therapy</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- CATEGORÍA 8 -->
+    <!-- ── CAT 8: SALUD MENTAL GENERAL ── -->
     <div class="categoria-card c8">
-      <div class="cat-barra b8"></div>
-      <div class="cat-header" onclick="toggleCategoria(this)">
+      <div class="cat-barra bl8"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
         <span class="cat-icono">🧠</span>
-        <div class="cat-titulo">
-          <h3>Salud mental general</h3>
-          <span>10 temas · Depresión, duelo, trauma y más</span>
-        </div>
+        <div class="cat-titulo"><h3>Salud mental general</h3><span>10 temas · Depresión, duelo, trauma y más</span></div>
         <button class="cat-toggle">+</button>
       </div>
       <div class="cat-contenido">
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>¿Cuándo ir a terapia?</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>No hay que esperar una crisis.</strong> La terapia es útil cuando algo interfiere con tu bienestar, tus relaciones o tu funcionamiento diario — aunque no sepas exactamente qué es.</p>
-            <p>Señales de que es buen momento: tristeza o ansiedad que dura más de dos semanas, dificultades en el trabajo o la escuela sin causa clara, conflictos relacionales repetitivos, síntomas físicos sin causa médica, o simplemente querer entenderte mejor.</p>
-            <p>Ir a terapia no significa estar "loco". Significa tomar en serio tu salud mental con la misma naturalidad con la que cuidas tu salud física.</p>
-            <span class="tag-evidencia">✓ Basado en APA · Guidelines for Psychological Practice</span>
+          <div class="subtema-contenido bc8">
+            <p><strong>No hay que esperar una crisis.</strong> La terapia es útil cuando algo interfiere con el bienestar, las relaciones o el funcionamiento diario — aunque no se sepa exactamente qué es.</p>
+            <p>Señales de que es buen momento: tristeza o ansiedad que dura más de dos semanas, dificultades sostenidas en el trabajo o la escuela, conflictos relacionales repetitivos, o simplemente querer entenderse mejor.</p>
+            <p>Ir a terapia no significa estar "loco". Significa tomar en serio la salud mental con la misma naturalidad con la que se cuida la salud física. Y hacerlo antes de la crisis es siempre más efectivo que hacerlo en ella.</p>
+            <span class="tag-evidencia">✓ APA · Guidelines for Psychological Practice 2023</span>
           </div>
         </div>
-        <div class="subtema" onclick="toggleSubtema(this)">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Depresión: más que tristeza</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc8">
+            <p><strong>La depresión no es simplemente estar triste</strong> — es un trastorno del estado de ánimo que afecta el pensamiento, la energía, el sueño, el apetito y la capacidad de disfrutar. La tristeza tiene causa; la depresión a veces no.</p>
+            <p>En niños puede manifestarse como irritabilidad más que tristeza, problemas de conducta, quejas físicas sin causa médica o pérdida de interés en actividades que antes disfrutaba.</p>
+            <p>Tiene tratamiento efectivo: la combinación de psicoterapia cognitivo-conductual y, en casos moderados a severos, medicación supervisada por psiquiatra tiene la mayor evidencia disponible.</p>
+            <span class="tag-evidencia">✓ WHO · Depression Fact Sheet 2023</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Duelo: tipos y proceso</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc8">
+            <p><strong>El duelo no sigue fases lineales</strong> — es caótico, no lineal y profundamente personal. Las "5 etapas de Kübler-Ross" son descriptivas, no prescriptivas. No hay un duelo correcto.</p>
+            <p>El duelo no elaborado (que se evita, congela o intensifica de forma crónica) puede derivar en depresión, ansiedad o síntomas físicos. El objetivo no es "superar" sino integrar la pérdida.</p>
+            <p>Los niños hacen el duelo de forma diferente a los adultos — pueden llorar y minutos después jugar. Eso no significa que no estén afectados. Necesitan información honesta, rutina estable y permiso para sentir.</p>
+            <span class="tag-evidencia">✓ Worden, J.W. · Grief Counseling and Grief Therapy</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
           <div class="subtema-titulo"><span>Estigma en salud mental</span><span class="subtema-flecha">▶</span></div>
-          <div class="subtema-contenido">
-            <p><strong>El estigma es la barrera número uno</strong> que impide que las personas busquen ayuda psicológica. Se estima que más del 50% de personas con condiciones de salud mental no reciben tratamiento debido al estigma.</p>
-            <p>El estigma tiene dos formas: externo (juicio de otros) e interno (vergüenza propia). El interno suele ser el más paralizante porque la persona lo carga sola.</p>
-            <p>Hablar abiertamente sobre salud mental en familia — desde pequeños — es una de las acciones preventivas más poderosas y accesibles que existe.</p>
-            <span class="tag-evidencia">✓ Basado en WHO Mental Health Report 2022</span>
+          <div class="subtema-contenido bc8">
+            <p><strong>El estigma es la barrera número uno</strong> para que las personas busquen ayuda. Se estima que más de la mitad de personas con condiciones de salud mental no reciben tratamiento por vergüenza social o propia.</p>
+            <p>El estigma interno — la vergüenza que la persona carga sola — suele ser más paralizante que el externo. Y es el más difícil de tratar porque no se ve.</p>
+            <p>Hablar abiertamente de salud mental en familia, desde pequeños, es una de las acciones preventivas más poderosas que existe. El lenguaje que usamos en casa modela la relación que los niños tendrán con su propia mente.</p>
+            <span class="tag-evidencia">✓ WHO · World Mental Health Report 2022</span>
           </div>
         </div>
+
       </div>
     </div>
 
-  </div><!-- /grid -->
+    <!-- ── CAT 9: DESARROLLO PERSONAL ── -->
+    <div class="categoria-card c9">
+      <div class="cat-barra bl9"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">🧍‍♀️</span>
+        <div class="cat-titulo"><h3>Desarrollo personal</h3><span>10 temas · Autoestima, resiliencia, propósito y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Resiliencia: cómo se construye</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc9">
+            <p><strong>La resiliencia no es la ausencia de dolor</strong> — es la capacidad de atravesarlo y recuperarse. No es un rasgo con el que se nace: se construye a través de experiencias y relaciones.</p>
+            <p>El factor predictor más consistente de resiliencia infantil es la presencia de al menos un adulto estable y confiable en la vida del niño. No se necesita una vida perfecta — se necesita una relación segura.</p>
+            <p>Otros factores protectores: sentido de propósito, habilidades de regulación emocional, conexión con la comunidad y la creencia de que las acciones propias tienen impacto en los resultados.</p>
+            <span class="tag-evidencia">✓ Masten, A. · Ordinary Magic: Resilience in Development</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Mentalidad de crecimiento (Growth Mindset)</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc9">
+            <p><strong>La mentalidad fija</strong> cree que las capacidades son innatas e inamovibles ("soy malo en matemáticas"). <strong>La mentalidad de crecimiento</strong> cree que se pueden desarrollar con esfuerzo y estrategia.</p>
+            <p>Los niños con mentalidad de crecimiento se recuperan mejor del fracaso, buscan desafíos y persisten más. Y lo más importante: esta mentalidad se puede enseñar y modelar.</p>
+            <p>El lenguaje que usamos importa: elogiar el proceso ("trabajaste muy duro") en vez del resultado ("eres muy listo") es uno de los cambios más simples y efectivos que los adultos pueden hacer.</p>
+            <span class="tag-evidencia">✓ Dweck, C. · Mindset: The New Psychology of Success (2006)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Autoconocimiento y propósito</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc9">
+            <p><strong>El propósito de vida</strong> — tener una razón para levantarse más allá de la supervivencia — es uno de los predictores más consistentes de bienestar psicológico y longevidad.</p>
+            <p>No es necesario tener un gran propósito filosófico. Para los adolescentes, puede ser tan concreto como un talento que desarrollar, una causa que les importe o una persona a quien cuidar.</p>
+            <p>El autoconocimiento — saber qué me importa, qué me da energía y qué me la quita — es la brújula interna que permite tomar decisiones alineadas con quién uno realmente es.</p>
+            <span class="tag-evidencia">✓ Frankl, V. · Man's Search for Meaning & Damon, W. (2008)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 10: COGNICIÓN ── -->
+    <div class="categoria-card c10">
+      <div class="cat-barra bl10"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">🧠</span>
+        <div class="cat-titulo"><h3>Cognición y pensamiento</h3><span>10 temas · Distorsiones cognitivas, toma de decisiones y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Distorsiones cognitivas</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc10">
+            <p><strong>Las distorsiones cognitivas</strong> son patrones de pensamiento automático que nos llevan a interpretaciones sesgadas de la realidad. No son mentiras que nos contamos a propósito — son atajos mentales que el cerebro aprende.</p>
+            <p>Las más comunes: catastrofización ("todo va a salir mal"), pensamiento todo-o-nada ("si no soy perfecto, soy un fracaso"), lectura de mente ("sé que piensa mal de mí") y personalización ("todo es mi culpa").</p>
+            <p>Identificarlas es el primer paso para cambiarlas. La terapia cognitivo-conductual enseña a cuestionar estos pensamientos con evidencia real, y es el enfoque con mayor respaldo científico para ansiedad y depresión.</p>
+            <span class="tag-evidencia">✓ Beck, A.T. · Cognitive Therapy (1979)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Pensamientos automáticos</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc10">
+            <p><strong>Los pensamientos automáticos</strong> son el "ruido de fondo" de la mente — aparecen sin ser invocados, son rápidos y frecuentemente negativos. Todos los tenemos; el problema es cuando los tomamos como hechos.</p>
+            <p>Un pensamiento no es un hecho — es una interpretación. La distancia entre "tuve el pensamiento de que soy un fracaso" y "soy un fracaso" puede parecer pequeña pero es enorme en términos de salud mental.</p>
+            <p>La práctica de mindfulness enseña a observar pensamientos sin identificarse con ellos — como nubes que pasan, no como la identidad de quien los tiene.</p>
+            <span class="tag-evidencia">✓ Burns, D. · Feeling Good: The New Mood Therapy</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Toma de decisiones</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc10">
+            <p><strong>Las decisiones raramente son puramente racionales</strong> — la emoción siempre participa. El neurocientífico Damasio mostró que personas con daño en el área emocional del cerebro son incapaces de tomar buenas decisiones, aunque su razonamiento sea intacto.</p>
+            <p>Los sesgos cognitivos (confirmación, disponibilidad, anclaje) afectan todas nuestras decisiones sin que lo notemos. Conocerlos no los elimina, pero permite cuestionarlos.</p>
+            <p>Enseñar a los niños a tomar decisiones — con opciones reales y consecuencias reales — es una de las mejores formas de desarrollar autonomía, responsabilidad y autoconfianza.</p>
+            <span class="tag-evidencia">✓ Damasio, A. · Descartes' Error (1994) & Kahneman, D. (2011)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 11: RELACIONES INTERPERSONALES ── -->
+    <div class="categoria-card c11">
+      <div class="cat-barra bl11"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">❤️</span>
+        <div class="cat-titulo"><h3>Relaciones interpersonales</h3><span>8 temas · Límites, empatía, dependencia emocional y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Límites personales: qué son y cómo ponerlos</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc11">
+            <p><strong>Los límites no son muros</strong> — son la definición de dónde termino yo y dónde empieza el otro. No son sobre controlar a los demás sino sobre proteger lo propio: tiempo, energía, valores y bienestar.</p>
+            <p>Poner límites es difícil porque muchas personas lo aprendieron como algo egoísta o peligroso. En familias donde expresar necesidades tenía consecuencias negativas, los límites se viven como amenaza.</p>
+            <p>Un límite sano se comunica con claridad, sin agresividad, y se mantiene con consistencia — no con culpa. La frase más poderosa no es "no puedes" sino "yo no voy a".</p>
+            <span class="tag-evidencia">✓ Katherine, A. · Where to Draw the Line (2000)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Dependencia emocional</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc11">
+            <p><strong>La dependencia emocional</strong> es la necesidad excesiva de aprobación, presencia y validación del otro para sentirse bien consigo mismo. No es amor intenso — es miedo disfrazado de amor.</p>
+            <p>Tiene raíces frecuentes en el apego inseguro, la baja autoestima y experiencias de abandono o invalidación en la infancia. Se reproduce en las relaciones adultas de forma automática hasta que se trabaja conscientemente.</p>
+            <p>El objetivo terapéutico no es independencia total (eso sería evitación) sino interdependencia sana: poder querer al otro sin necesitar al otro para existir.</p>
+            <span class="tag-evidencia">✓ Castelló Blasco, J. · Dependencia Emocional (2005)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Comunicación asertiva</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc11">
+            <p><strong>La asertividad</strong> es la capacidad de expresar necesidades, opiniones y sentimientos de forma directa, honesta y respetuosa — sin agresividad ni sumisión. Es el punto medio entre "me trago todo" y "exploto".</p>
+            <p>No es un rasgo innato — es una habilidad que se aprende. Muchas personas oscilan entre pasividad y agresividad precisamente porque nunca les enseñaron el registro del medio.</p>
+            <p>Fórmula básica: describir la situación objetivamente + expresar cómo te afecta + pedir lo que necesitas + escuchar la respuesta. Sin acusaciones, sin minimización propia.</p>
+            <span class="tag-evidencia">✓ Alberti, R. & Emmons, M. · Your Perfect Right (1970/2017)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 12: TECNOLOGÍA Y SALUD MENTAL ── -->
+    <div class="categoria-card c12">
+      <div class="cat-barra bl12"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">💻</span>
+        <div class="cat-titulo"><h3>Tecnología y salud mental</h3><span>7 temas · Adicción al celular, gaming, ciberbullying y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Uso problemático del celular</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc12">
+            <p><strong>El uso problemático del celular</strong> se define no por la cantidad de horas sino por el impacto: ¿interfiere con el sueño, las relaciones, el rendimiento académico o el bienestar emocional?</p>
+            <p>Las apps están diseñadas con principios de diseño persuasivo (notificaciones, likes variables, scroll infinito) que activan los mismos circuitos dopaminérgicos que el juego de azar. No es falta de voluntad — es neurobiología.</p>
+            <p>Estrategias efectivas: zonas libres de celular en casa (dormitorios, mesa de comida), revisar el tiempo de pantalla semanalmente en familia sin juicio, y modelar el adulto el uso que quiere ver.</p>
+            <span class="tag-evidencia">✓ Twenge, J.M. · The Anxious Generation (2024)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Gaming: cuándo preocuparse</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc12">
+            <p><strong>El gaming no es inherentemente dañino</strong> — puede desarrollar habilidades cognitivas, trabajo en equipo, resolución de problemas y hasta gestión emocional. El contexto y la cantidad importan.</p>
+            <p>La OMS reconoció el "trastorno por juego" en 2019, pero es importante no patologizar afición intensa. Las señales de alarma son: pérdida de control, priorizar el juego sobre necesidades básicas (dormir, comer, relacionarse) y síntomas de abstinencia.</p>
+            <p>Los juegos más adictivos por diseño son los multijugador masivos con recompensas variables. No todos los juegos tienen el mismo potencial de uso problemático.</p>
+            <span class="tag-evidencia">✓ OMS · ICD-11 Gaming Disorder (2019)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Ciberbullying</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc12">
+            <p><strong>El ciberbullying tiene características que lo hacen especialmente dañino:</strong> es 24/7 (no termina al salir del colegio), tiene potencial de alcance masivo, y el anonimato reduce la inhibición del agresor.</p>
+            <p>Las víctimas frecuentemente no lo reportan por vergüenza, miedo a que les quiten el dispositivo o por creer que los adultos no entenderán. Crear un clima de confianza sin sobreacción es clave para que lo cuenten.</p>
+            <p>Ante un caso: documentar (capturas), no responder al agresor, reportar a la plataforma y a la escuela, y acompañar emocionalmente al menor — no solo "gestionar el problema".</p>
+            <span class="tag-evidencia">✓ Hinduja, S. & Patchin, J. · Cyberbullying Research Center</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 13: PSICOLOGÍA CLÍNICA APLICADA ── -->
+    <div class="categoria-card c13">
+      <div class="cat-barra bl13"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">🧠</span>
+        <div class="cat-titulo"><h3>Psicología clínica aplicada</h3><span>6 temas · Qué es la terapia, tipos, mitos y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Tipos de terapia: cuál es cuál</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc13">
+            <p><strong>Terapia cognitivo-conductual (TCC):</strong> trabaja la relación entre pensamientos, emociones y conductas. Es la más respaldada por evidencia para ansiedad, depresión y fobias. Orientada a objetivos y generalmente de corta-media duración.</p>
+            <p><strong>Terapia sistémica:</strong> trabaja con el sistema (familia, pareja) más que con el individuo aislado. Especialmente útil para dinámicas familiares, adolescentes y problemas relacionales.</p>
+            <p><strong>Psicoanálisis / terapia psicodinámica:</strong> explora el pasado y el inconsciente como fuente de los patrones actuales. Más larga, más profunda, útil para quien quiere entenderse en profundidad más que resolver síntomas específicos.</p>
+            <span class="tag-evidencia">✓ APA Division 12 · Evidence-Based Treatments</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Mitos sobre la terapia</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc13">
+            <p><strong>"La terapia es para gente con problemas graves"</strong> — Falso. Es para cualquier persona que quiera vivir con mayor claridad, bienestar o que enfrenta un momento difícil. Prevenir es más eficiente que curar.</p>
+            <p><strong>"El terapeuta te dice qué hacer"</strong> — Falso. Un buen terapeuta te acompaña a encontrar tus propias respuestas, no te las impone. La autonomía del paciente es un principio ético fundamental.</p>
+            <p><strong>"Si vas a terapia, significa que fallaste"</strong> — Falso. Pedir ayuda es uno de los actos de mayor inteligencia emocional que existen. La terapia no es señal de debilidad — es señal de que te tomas en serio.</p>
+            <span class="tag-evidencia">✓ APA · Understanding Psychotherapy 2023</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 14: CONDUCTAS DE RIESGO ── -->
+    <div class="categoria-card c14">
+      <div class="cat-barra bl14"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">⚠️</span>
+        <div class="cat-titulo"><h3>Conductas de riesgo</h3><span>6 temas · Autolesiones, ideación suicida, sustancias y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Autolesiones: qué hay detrás</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc14">
+            <p><strong>Las autolesiones no suicidas</strong> (cortes, quemaduras, golpes) son frecuentemente un mecanismo de regulación emocional — una forma de manejar un dolor emocional que se siente insoportable cuando no hay otras herramientas disponibles.</p>
+            <p>No son un "intento de llamar la atención" en sentido peyorativo — son una señal de que alguien necesita urgentemente aprender formas más seguras de manejar el dolor. Descartarlas o reaccionar con pánico cierra la comunicación.</p>
+            <p>La respuesta más efectiva: reaccionar con calma, preguntar sin juzgar, buscar apoyo profesional especializado y no hacer que la persona se sienta más avergonzada de lo que ya se siente.</p>
+            <span class="tag-evidencia">✓ Linehan, M. · DBT Skills Training · SAFE Alternatives</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Ideación suicida: cómo hablar de ello</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc14">
+            <p><strong>Hablar sobre suicidio no planta la idea</strong> — la investigación muestra consistentemente que preguntar directamente reduce el riesgo al abrir un canal de comunicación. El silencio es más peligroso que la conversación.</p>
+            <p>Si alguien comparte pensamientos suicidas: escuchar sin minimizar, no prometer guardar el secreto, preguntar si tienen un plan concreto (eso determina la urgencia) y acompañar a buscar ayuda profesional inmediata.</p>
+            <p>En caso de riesgo inmediato: 988 Suicide & Crisis Lifeline (EE.UU.) o la línea de crisis local. No dejar a la persona sola y retirar acceso a medios si es posible.</p>
+            <span class="tag-evidencia">✓ AFSP · American Foundation for Suicide Prevention 2024</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Sustancias en adolescentes: prevención</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc14">
+            <p><strong>El cerebro adolescente es especialmente vulnerable a la adicción</strong> porque está en pleno desarrollo — la dopamina responde con más intensidad y el sistema de freno (prefrontal) aún no está maduro.</p>
+            <p>Los factores de riesgo más documentados: historia de trauma, trastornos de salud mental no tratados, presión de pares, acceso fácil y falta de conexión familiar.</p>
+            <p>La prevención más efectiva no es el "di no a las drogas" — es reducir los factores de riesgo y fortalecer los factores protectores: vínculo familiar, actividades significativas y adultos de confianza.</p>
+            <span class="tag-evidencia">✓ NIDA · Principles of Adolescent Substance Use Disorder Treatment 2023</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 15: BIENESTAR Y HÁBITOS ── -->
+    <div class="categoria-card c15">
+      <div class="cat-barra bl15"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">🌿</span>
+        <div class="cat-titulo"><h3>Bienestar y hábitos saludables</h3><span>8 temas · Sueño, ejercicio, mindfulness y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Sueño y salud mental</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc15">
+            <p><strong>El sueño no es lujo — es función cerebral esencial.</strong> Durante el sueño el cerebro consolida la memoria, regula emociones, elimina toxinas y restaura las funciones ejecutivas.</p>
+            <p>La privación de sueño produce síntomas que se confunden con TDAH, depresión o ansiedad: irritabilidad, dificultad de concentración, reactividad emocional. Antes de cualquier diagnóstico, vale la pena evaluar el sueño.</p>
+            <p>Necesidades por edad: bebés 14-17h, escolares 9-11h, adolescentes 8-10h (y sus ritmos circadianos genuinamente se retrasan — no es pereza, es biología). Los adultos, 7-9h.</p>
+            <span class="tag-evidencia">✓ Walker, M. · Why We Sleep (2017) & NSF Sleep Guidelines</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Ejercicio y emociones</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc15">
+            <p><strong>El ejercicio físico regular</strong> tiene efectos sobre la salud mental comparables en algunos estudios a los de la medicación antidepresiva de primera línea — sin efectos secundarios.</p>
+            <p>Activa la producción de BDNF (factor neurotrófico que ayuda al crecimiento neuronal), libera endorfinas y serotonina, y reduce los niveles de cortisol (hormona del estrés).</p>
+            <p>Para niños y adolescentes, 60 minutos diarios de actividad moderada es la recomendación OMS. No tiene que ser deporte formal — bailar, caminar, jugar afuera cuentan.</p>
+            <span class="tag-evidencia">✓ Ratey, J. · Spark: The Revolutionary New Science of Exercise and the Brain</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Mindfulness para familias</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc15">
+            <p><strong>Mindfulness</strong> es la práctica de prestar atención intencionalmente al momento presente, sin juzgar lo que aparece. No es relajación ni pensamiento positivo — es observación sin apego.</p>
+            <p>En niños desde los 5-6 años se puede practicar a través de respiración consciente, body scan simple ("¿qué siente tu barriga ahora?") y atención a los sentidos ("dime 5 cosas que puedes ver").</p>
+            <p>No requiere meditación formal. Un minuto de respiración consciente antes de una tarea difícil, o al despertar, ya tiene impacto medible en la regulación emocional.</p>
+            <span class="tag-evidencia">✓ Kabat-Zinn, J. · Full Catastrophe Living & Kaiser Permanente MBSR studies</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 16: CASOS ESPECÍFICOS ── -->
+    <div class="categoria-card c16">
+      <div class="cat-barra bl16"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">🧩</span>
+        <div class="cat-titulo"><h3>Casos específicos</h3><span>7 temas · TDAH en el aula, TEA verbal, bullying y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Niño con TDAH en el aula</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc16">
+            <p><strong>Un niño con TDAH en el aula</strong> no necesita más castigos — necesita un entorno diseñado para su forma de aprender: instrucciones cortas y claras, tareas divididas en pasos pequeños, y movimiento frecuente.</p>
+            <p>Las adaptaciones más efectivas: asiento cerca del docente, tiempo extra en evaluaciones, uso de organizadores visuales, y retroalimentación inmediata y específica (no "compórtate" sino "ahora necesito que hagas X").</p>
+            <p>La comunicación fluida entre psicólogo, familia y docente es indispensable. El niño no debe ser el mensajero — los adultos deben coordinarse directamente.</p>
+            <span class="tag-evidencia">✓ Barkley, R. · Taking Charge of ADHD (4th Ed. 2020)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Adolescente con aislamiento social</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc16">
+            <p><strong>El aislamiento social en adolescentes</strong> puede tener muchas raíces: ansiedad social, depresión, experiencias de rechazo previo, diferencias de intereses o simplemente un perfil introvertido que no encaja con el grupo disponible.</p>
+            <p>No todo aislamiento es patológico — algunos adolescentes prefieren pocas relaciones profundas a muchas superficiales. El indicador de alerta es el malestar subjetivo y el impacto en el funcionamiento.</p>
+            <p>Lo que sí preocupa: retraimiento súbito en quien antes era social, pérdida de interés en todo, comentarios sobre no pertenecer a ningún lado. Eso merece atención profesional.</p>
+            <span class="tag-evidencia">✓ Cacioppo, J. · Loneliness: Human Nature and the Need for Social Connection</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Niño con desregulación emocional intensa</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc16">
+            <p><strong>La desregulación emocional intensa</strong> — reacciones explosivas que parecen desproporcionadas — puede tener muchas raíces: TDAH, procesamiento sensorial atípico, trauma, ansiedad o simplemente un umbral neurológico bajo.</p>
+            <p>Antes de buscar la etiqueta, importa entender el patrón: ¿qué la desencadena?, ¿a qué hora del día ocurre más?, ¿hay factores físicos (hambre, sueño, sobrestimulación)?</p>
+            <p>El entorno importa tanto como el niño. Reducir variables ambientales estresantes, anticipar transiciones y enseñar vocabulario emocional son intervenciones con impacto real antes de cualquier diagnóstico.</p>
+            <span class="tag-evidencia">✓ Greene, R. · The Explosive Child (2014)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 17: PSICOEDUCACIÓN PARA PADRES ── -->
+    <div class="categoria-card c17">
+      <div class="cat-barra bl17"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">👩‍👧</span>
+        <div class="cat-titulo"><h3>Psicoeducación para padres</h3><span>6 temas · Cómo entender a tu hijo, manejo conductual y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Expectativas realistas según la edad</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc17">
+            <p><strong>Muchos conflictos entre padres e hijos nacen de expectativas desajustadas</strong> — pedirle a un niño de 3 años que "entienda" o a uno de 8 que "controle sus emociones" como un adulto.</p>
+            <p>Conocer qué es cognitiva y emocionalmente esperable en cada etapa no es bajar el listón — es ajustar la intervención al nivel real del niño para que pueda tener éxito.</p>
+            <p>Un niño que "no escucha" puede estar simplemente en una etapa donde su cerebro procesa el lenguaje más lentamente de lo que el adulto espera. El problema a veces está en el ritmo, no en la voluntad.</p>
+            <span class="tag-evidencia">✓ Piaget, J. & Vygotsky, L. · Developmental Psychology</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Qué hacer y qué evitar en casa</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc17">
+            <p><strong>Sí ayuda:</strong> rutinas predecibles, validar la emoción antes de corregir la conducta, elegir las batallas, elogiar el esfuerzo más que el resultado, y reparar el vínculo después de un conflicto.</p>
+            <p><strong>Mejor evitar:</strong> amenazas que no se cumplen (el niño aprende que no hay consecuencias reales), comparar con hermanos o compañeros, hablar en negativo sobre el niño delante de él, y resolver todos sus problemas sin dejarle intentarlo.</p>
+            <p>La consistencia supera a la perfección. Un padre que comete errores pero los repara con honestidad ("me equivoqué al gritar") le enseña al hijo más que un padre que nunca falla pero nunca pide disculpas.</p>
+            <span class="tag-evidencia">✓ Siegel, D. & Bryson, T. · No-Drama Discipline (2014)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Acompañamiento emocional efectivo</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc17">
+            <p><strong>El primer instinto de muchos padres ante el dolor de su hijo</strong> es eliminarlo — quitar la tristeza, minimizar el miedo, resolver el problema. Pero ese instinto, aunque nace del amor, a veces interfiere.</p>
+            <p>Acompañar emocionalmente no es resolver — es estar presente. "Estoy aquí. Lo que sientes tiene sentido. No tienes que enfrentarlo solo." Eso es lo que regula el sistema nervioso del niño.</p>
+            <p>Los niños que se sienten acompañados emocionalmente desarrollan mejor tolerancia a la frustración, mayor capacidad de autorregulación y vínculos más seguros en la adultez.</p>
+            <span class="tag-evidencia">✓ Gottman, J. · Raising an Emotionally Intelligent Child (1997)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 18: PSICOEDUCACIÓN PARA PACIENTES ── -->
+    <div class="categoria-card c18">
+      <div class="cat-barra bl18"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">👩‍⚕️</span>
+        <div class="cat-titulo"><h3>Psicoeducación para pacientes</h3><span>5 temas · Entender tu diagnóstico, estrategias y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Entender tu diagnóstico</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc18">
+            <p><strong>Un diagnóstico no te define</strong> — describe un patrón de síntomas en un momento determinado. Es una herramienta para orientar el tratamiento, no una etiqueta permanente de lo que eres.</p>
+            <p>Conocer tu diagnóstico reduce la angustia de "no sé qué me pasa", permite acceder a recursos específicos y abre conversaciones más informadas con tu equipo de salud.</p>
+            <p>Un diagnóstico también puede cambiar con el tiempo — el cerebro y las circunstancias cambian, y los diagnósticos reflejan ese proceso vivo, no una foto fija.</p>
+            <span class="tag-evidencia">✓ DSM-5-TR · APA 2022 & NICE Guidelines</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Estrategias prácticas de manejo diario</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc18">
+            <p><strong>El manejo entre sesiones</strong> es tan importante como la terapia misma. Las habilidades aprendidas en consulta necesitan práctica en la vida real para consolidarse.</p>
+            <p>Herramientas de alta evidencia para uso diario: registro de pensamientos (identificar el pensamiento, la emoción y la respuesta alternativa), rutinas de sueño estables, activación conductual (hacer aunque no tengas ganas) y práctica de mindfulness breve.</p>
+            <p>No se trata de hacer todo perfecto — se trata de hacer algo consistentemente. Un hábito pequeño mantenido supera siempre a una práctica intensa y esporádica.</p>
+            <span class="tag-evidencia">✓ Beck, J. · Cognitive Behavior Therapy (3rd Ed. 2021)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 19: EVALUACIÓN PSICOLÓGICA ── -->
+    <div class="categoria-card c19">
+      <div class="cat-barra bl19"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">📋</span>
+        <div class="cat-titulo"><h3>Evaluación psicológica</h3><span>5 temas · Qué son las pruebas, diagnóstico y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>¿Para qué sirve una evaluación psicológica?</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc19">
+            <p><strong>La evaluación psicológica</strong> es el proceso de recopilación sistemática de información sobre el funcionamiento cognitivo, emocional, conductual y social de una persona para orientar el diagnóstico y el plan de intervención.</p>
+            <p>No es solo "hacerle pruebas al niño" — incluye entrevistas con la familia, observación, revisión de historial y escalas estandarizadas. Cuanta más información, más preciso el mapa.</p>
+            <p>Una evaluación bien hecha no solo dice qué tiene el niño — dice cómo aprende, qué lo motiva, qué lo dificulta y qué apoyos específicos le van a funcionar. Es un recurso, no una sentencia.</p>
+            <span class="tag-evidencia">✓ APA · Standards for Educational and Psychological Testing 2023</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Cómo interpretar los resultados (básico)</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc19">
+            <p><strong>Los resultados de una evaluación psicológica</strong> generalmente incluyen puntuaciones estandarizadas comparadas con una muestra de referencia (percentiles o puntuaciones típicas). Un puntaje "promedio" no significa mediocre — significa dentro del rango esperado.</p>
+            <p>Los percentiles indican posición relativa: percentil 50 significa que el niño puntúa igual o mejor que el 50% de sus pares de referencia. No es un porcentaje de aciertos — es una comparación normativa.</p>
+            <p>Los resultados nunca deben leerse de forma aislada. El contexto (motivación en la prueba, factores emocionales ese día, historial previo) siempre matiza los números.</p>
+            <span class="tag-evidencia">✓ Sattler, J. · Assessment of Children (6th Ed.)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CAT 20: ENFOQUE INTEGRAL ── -->
+    <div class="categoria-card c20">
+      <div class="cat-barra bl20"></div>
+      <div class="cat-header" onclick="toggleCat(this)">
+        <span class="cat-icono">🌍</span>
+        <div class="cat-titulo"><h3>Enfoque integral del bienestar</h3><span>5 temas · Cuerpo, entorno, sentido de vida y más</span></div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Psicología y cuerpo: la conexión mente-cuerpo</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc20">
+            <p><strong>El cuerpo y la mente no son sistemas separados</strong> — son el mismo sistema visto desde distintos ángulos. El estrés crónico tiene efectos físicos medibles (inflamación, inmunidad, sistema cardiovascular) y las condiciones físicas tienen efectos emocionales claros.</p>
+            <p>El trauma se almacena en el cuerpo — no solo en los recuerdos. Aproximaciones somáticas como el yoga terapéutico, EMDR y la terapia sensoriomotriz trabajan directamente con esta dimensión.</p>
+            <p>Intervenciones tan simples como regular la respiración, el movimiento diario y el contacto físico seguro (abrazos, masajes) tienen efectos documentados sobre la regulación del sistema nervioso.</p>
+            <span class="tag-evidencia">✓ Van der Kolk, B. · The Body Keeps the Score (2014)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Dimensión espiritual y sentido de vida</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc20">
+            <p><strong>La dimensión espiritual no requiere religión</strong> — es la necesidad humana de significado, trascendencia y conexión con algo más grande que uno mismo. Forma parte del bienestar integral.</p>
+            <p>Frankl mostró que incluso en condiciones extremas, las personas que encontraban sentido en su sufrimiento sobrevivían emocionalmente mejor. El propósito es un recurso psicológico real.</p>
+            <p>En psicología positiva, el bienestar se entiende en cinco dimensiones (modelo PERMA): emociones positivas, compromiso, relaciones, significado y logro. Ninguna es suficiente sola.</p>
+            <span class="tag-evidencia">✓ Frankl, V. & Seligman, M. · Flourish (2011)</span>
+          </div>
+        </div>
+
+        <div class="subtema" onclick="toggleSub(this)">
+          <div class="subtema-titulo"><span>Psicología y entorno: el contexto importa</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido bc20">
+            <p><strong>El comportamiento y la salud mental no ocurren en el vacío</strong> — están profundamente influenciados por el entorno: familia, escuela, comunidad, cultura, nivel socioeconómico y acceso a recursos.</p>
+            <p>Un niño con TDAH en un entorno estructurado y comprensivo puede funcionar de forma excelente. El mismo niño en un entorno caótico y exigente puede parecer "imposible". El cambio no siempre está en el niño.</p>
+            <p>La psicología ecológica (Bronfenbrenner) nos recuerda que el niño está rodeado de sistemas que se influyen mutuamente: familia, escuela, comunidad y cultura. Intervenir en el entorno es tan válido como intervenir en el individuo.</p>
+            <span class="tag-evidencia">✓ Bronfenbrenner, U. · Ecology of Human Development (1979)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /grid-categorias -->
 </section>
 
-<!-- ══════════════════════════════
-     SEGUNDO BANNER PUBLICITARIO
-══════════════════════════════ -->
-<div class="ad-banner">
-  <span style="opacity:0.4; font-size:11px;">Espacio publicitario · Google AdSense</span>
+<!-- ══════ AD BANNER 2 ══════ -->
+<div class="ad-wrap">
+  <span class="ad-label">Publicidad</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8688885729274409"
+       data-ad-slot="auto"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<!-- ══════════════════════════════
-     SOBRE CAROL
-══════════════════════════════ -->
+<!-- ══════ SOBRE CAROL ══════ -->
 <section class="sobre-carol" id="sobre">
   <div class="sobre-inner">
-    <div class="sobre-logo">
-      <img src="carol-logo.png" alt="Soy Psico Carol" onerror="this.style.background='linear-gradient(135deg,#7EE8E8,#F2A97E)';this.style.borderRadius='50%'">
-    </div>
+    <img class="sobre-img" src="carol-logo.png" alt="Soy Psico Carol">
     <div class="sobre-texto">
-      <h2>Hola, soy <em>Carol</em> — psicóloga familiar</h2>
+      <h2>Hola, soy <em>Carol</em><br>psicóloga familiar</h2>
       <p>Llevo años acompañando a familias, niños y adolescentes en sus procesos emocionales. Este espacio nació de una convicción simple: la información psicoeducativa de calidad debe ser accesible para todos, no solo para quienes pueden costear una consulta.</p>
       <p>Todo el contenido que encuentras aquí está basado en evidencia científica actualizada y traducido al lenguaje real de las familias — sin tecnicismos innecesarios, sin juicios, con mucho respeto por lo complejo que es criar, crecer y relacionarse.</p>
-      <p>Este es tu espacio. Léelo, compártelo, pregunta lo que necesites.</p>
+      <p>Este es tu espacio. Léelo, compártelo y pregunta lo que necesites.</p>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     COMUNIDAD / COMENTARIOS
-══════════════════════════════ -->
-<section class="seccion-comentarios" id="comunidad">
+<!-- ══════ COMUNIDAD / DISQUS ══════ -->
+<section class="comentarios-wrap" id="comunidad">
   <h2>Pregunta, comenta, <em>conecta</em></h2>
-  <p>Este es un espacio de comunidad. Puedes dejar tus preguntas o reflexiones abajo — yo leo y respondo personalmente.</p>
+  <p>Este es un espacio de comunidad. Deja tus preguntas o reflexiones — leo y respondo personalmente.</p>
 
-  <!-- DISQUS: reemplaza "tu-shortname" con tu shortname de Disqus -->
   <div id="disqus_thread"></div>
-  <noscript>
-    <div class="disqus-placeholder">
-      <strong>💬 Sección de comentarios</strong>
-      Para activar los comentarios, crea una cuenta en <a href="https://disqus.com" target="_blank">disqus.com</a> y reemplaza "tu-shortname" en el código JavaScript con tu shortname real.
-    </div>
-  </noscript>
+  <noscript>Por favor activa JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios de Disqus.</a></noscript>
 </section>
 
-<!-- ══════════════════════════════
-     FOOTER
-══════════════════════════════ -->
+<!-- ══════ FOOTER ══════ -->
 <footer>
-  <p><strong>Soy Psico. Carol</strong> · Psicóloga Familiar · Doral, Florida</p>
-  <p style="margin-top:10px;">Este sitio es de carácter informativo y psicoeducativo. No reemplaza la consulta profesional.</p>
-  <p style="margin-top:10px; opacity:0.4;">© 2025 · Todos los derechos reservados</p>
+  <div class="footer-logo">
+    <img src="carol-logo.png" alt="Logo">
+    <span>Soy <em>Psico.</em> Carol</span>
+  </div>
+  <p>Psicóloga Familiar · Doral, Florida</p>
+  <p>Este sitio es de carácter informativo y psicoeducativo. No reemplaza la consulta profesional.</p>
+  <p style="margin-top:16px; opacity:0.3;">© 2025 · Todos los derechos reservados</p>
 </footer>
 
-<!-- ══════════════════════════════
-     JAVASCRIPT
-══════════════════════════════ -->
+<!-- ══════ JAVASCRIPT ══════ -->
 <script>
-  // Toggle categoría principal
-  function toggleCategoria(header) {
+  // ── Toggle categoría ──
+  function toggleCat(header) {
     const contenido = header.nextElementSibling.nextElementSibling;
-    const toggle = header.querySelector('.cat-toggle');
-    const estaAbierto = contenido.classList.contains('visible');
-
-    // Cerrar todos
+    const btn = header.querySelector('.cat-toggle');
+    const abierto = contenido.classList.contains('visible');
     document.querySelectorAll('.cat-contenido').forEach(c => c.classList.remove('visible'));
-    document.querySelectorAll('.cat-toggle').forEach(t => t.classList.remove('abierto'));
-
-    // Abrir el clickeado si estaba cerrado
-    if (!estaAbierto) {
-      contenido.classList.add('visible');
-      toggle.classList.add('abierto');
-    }
+    document.querySelectorAll('.cat-toggle').forEach(b => b.classList.remove('abierto'));
+    if (!abierto) { contenido.classList.add('visible'); btn.classList.add('abierto'); }
   }
 
-  // Toggle subtema
-  function toggleSubtema(el) {
-    const estaExpandido = el.classList.contains('expandido');
-    // Cerrar todos los subtemas del mismo padre
+  // ── Toggle subtema ──
+  function toggleSub(el) {
+    const estaba = el.classList.contains('expandido');
     el.parentElement.querySelectorAll('.subtema').forEach(s => s.classList.remove('expandido'));
-    if (!estaExpandido) el.classList.add('expandido');
+    if (!estaba) el.classList.add('expandido');
   }
 
-  // DISQUS — reemplaza 'tu-shortname' con tu shortname real de Disqus
+  // ── DISQUS ──
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = 'soypsicocarol-home';
+  };
   (function() {
     var d = document, s = d.createElement('script');
-    s.src = 'https://tu-shortname.disqus.com/embed.js';
+    s.src = 'https://https-soypsicocarol-github-io.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   })();
 </script>
 
 </body>
-</html>
+  </html>
