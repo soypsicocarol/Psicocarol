@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soy Psico. Carol — Psicoeducación para Familias</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crema: #FDF8F2;
+    --aqua: #7EE8E8;
+    --aqua-suave: #C8F4F4;
+    --coral: #E8735A;
+    --salmon: #F2A97E;
+    --verde: #5B8A6F;
+    --amarillo: #F5D76E;
+    --texto: #1E1B18;
+    --texto-suave: #6B6560;
+    --blanco: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--crema);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253,248,242,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(126,232,232,0.3);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--aqua);
+  }
+
+  .nav-logo span {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--texto);
+  }
+
+  .nav-logo span em { color: var(--coral); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--texto-suave);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--coral); }
+
+  .nav-lang {
+    background: var(--aqua-suave);
+    border: none;
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--texto);
+    transition: background 0.2s;
+  }
+
+  .nav-lang:hover { background: var(--aqua); }
+
+  /* ─── HERO ─── */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 32px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-texto h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.18;
+    margin-bottom: 22px;
+  }
+
+  .hero-texto h1 em { color: var(--coral); font-style: italic; }
+
+  .hero-texto p {
+    font-size: 17px;
+    color: var(--texto-suave);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .badge {
+    background: white;
+    border: 1.5px solid var(--aqua);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--texto);
+  }
+
+  .btn-primario {
+    display: inline-block;
+    background: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 24px rgba(232,115,90,0.3);
+  }
+
+  .btn-primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(232,115,90,0.4);
+  }
+
+  .hero-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-imagen img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--aqua);
+    box-shadow: 0 20px 60px rgba(126,232,232,0.4);
+    animation: flotar 4s ease-in-out infinite;
+  }
+
+  @keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .hero-deco {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 2px dashed var(--aqua-suave);
+    animation: girar 20s linear infinite;
+  }
+
+  @keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* ─── STATS ─── */
+  .stats {
+    background: white;
+    padding: 40px 32px;
+    border-top: 1px solid rgba(126,232,232,0.2);
+    border-bottom: 1px solid rgba(126,232,232,0.2);
+  }
+
+  .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: var(--coral);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--texto-suave);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  /* ─── SECCIÓN TEMAS ─── */
+  .seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 32px;
+  }
+
+  .seccion-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .etiqueta-seccion {
+    display: inline-block;
+    background: var(--aqua-suave);
+    color: var(--texto);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  .seccion-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .seccion-header h2 em { color: var(--coral); font-style: italic; }
+
+  .seccion-header p {
+    font-size: 16px;
+    color: var(--texto-suave);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ─── GRID CATEGORÍAS ─── */
+  .grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .categoria-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+  }
+
+  .cat-header {
+    padding: 24px 26px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .cat-icono {
+    font-size: 36px;
+    flex-shrink: 0;
+  }
+
+  .cat-titulo {
+    flex: 1;
+  }
+
+  .cat-titulo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .cat-titulo span {
+    font-size: 12px;
+    color: var(--texto-suave);
+  }
+
+  .cat-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--crema);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .cat-toggle.abierto {
+    background: var(--aqua-suave);
+    transform: rotate(45deg);
+  }
+
+  .cat-barra {
+    height: 3px;
+    width: 100%;
+  }
+
+  .cat-contenido {
+    display: none;
+    padding: 0 26px 24px;
+    animation: slideDown 0.3s ease;
+  }
+
+  .cat-contenido.visible { display: block; }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .subtema {
+    border-bottom: 1px solid #F0EDE8;
+    padding: 14px 0;
+    cursor: pointer;
+  }
+
+  .subtema:last-child { border-bottom: none; }
+
+  .subtema-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--texto);
+    gap: 10px;
+  }
+
+  .subtema-titulo span { flex: 1; }
+
+  .subtema-flecha {
+    font-size: 12px;
+    color: var(--texto-suave);
+    transition: transform 0.2s;
+  }
+
+  .subtema.expandido .subtema-flecha { transform: rotate(90deg); }
+
+  .subtema-contenido {
+    display: none;
+    margin-top: 12px;
+    background: var(--crema);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .subtema.expandido .subtema-contenido { display: block; }
+
+  .subtema-contenido p {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--texto-suave);
+    margin-bottom: 10px;
+  }
+
+  .subtema-contenido p:last-child { margin-bottom: 0; }
+
+  .subtema-contenido strong { color: var(--texto); font-weight: 500; }
+
+  .tag-evidencia {
+    display: inline-block;
+    background: #EEF6F1;
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 10px;
+    margin-top: 8px;
+  }
+
+  /* ─── COLORES POR CATEGORÍA ─── */
+  .c1 { border-top: 4px solid #7EE8E8; }
+  .c2 { border-top: 4px solid #F2A97E; }
+  .c3 { border-top: 4px solid #E8735A; }
+  .c4 { border-top: 4px solid #5B8A6F; }
+  .c5 { border-top: 4px solid #F5D76E; }
+  .c6 { border-top: 4px solid #7B9EC2; }
+  .c7 { border-top: 4px solid #C97BE8; }
+  .c8 { border-top: 4px solid #E87E7E; }
+
+  .b1 { background: #7EE8E8; }
+  .b2 { background: #F2A97E; }
+  .b3 { background: #E8735A; }
+  .b4 { background: #5B8A6F; }
+  .b5 { background: #F5D76E; }
+  .b6 { background: #7B9EC2; }
+  .b7 { background: #C97BE8; }
+  .b8 { background: #E87E7E; }
+
+  /* ─── SECCIÓN SOBRE CAROL ─── */
+  .sobre-carol {
+    background: linear-gradient(135deg, #1E1B18 0%, #2D2926 100%);
+    padding: 80px 32px;
+    color: white;
+  }
+
+  .sobre-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .sobre-logo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--aqua);
+    box-shadow: 0 0 40px rgba(126,232,232,0.3);
+  }
+
+  .sobre-texto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+
+  .sobre-texto h2 em { color: var(--aqua); font-style: italic; }
+
+  .sobre-texto p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    opacity: 0.85;
+    margin-bottom: 14px;
+    font-weight: 300;
+  }
+
+  /* ─── COMENTARIOS DISQUS ─── */
+  .seccion-comentarios {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 70px 32px;
+  }
+
+  .seccion-comentarios h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .seccion-comentarios h2 em { color: var(--coral); }
+
+  .seccion-comentarios p {
+    font-size: 15px;
+    color: var(--texto-suave);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .disqus-placeholder {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    border: 2px dashed var(--aqua);
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .disqus-placeholder strong { color: var(--coral); display: block; font-size: 16px; margin-bottom: 8px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #1E1B18;
+    color: white;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  footer p { font-size: 13px; opacity: 0.6; margin-bottom: 6px; }
+  footer strong { color: var(--aqua); opacity: 1; }
+
+  /* ─── PUBLI (AdSense) ─── */
+  .ad-banner {
+    background: white;
+    border-radius: 12px;
+    border: 1px dashed #D0C8C0;
+    text-align: center;
+    padding: 20px;
+    margin: 32px auto;
+    max-width: 728px;
+    font-size: 12px;
+    color: #BBBBB;
+    color: var(--texto-suave);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero-imagen { order: -1; }
+    .hero-imagen img { width: 220px; height: 220px; }
+    .hero-deco { width: 260px; height: 260px; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .sobre-inner { grid-template-columns: 1fr; text-align: center; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     NAV
+══════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <!-- Reemplaza src con tu logo real -->
+    <img src="carol-logo.png" alt="Logo Soy Psico Carol" onerror="this.style.display='none'">
+    <span>Soy <em>Psico.</em> Carol</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#temas">Temas</a></li>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#comunidad">Comunidad</a></li>
+  </ul>
+  <button class="nav-lang" onclick="alert('Versión en inglés próximamente 🚀')">🌐 English</button>
+</nav>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-texto">
+    <h1>Tu espacio de<br><em>salud mental</em><br>en familia</h1>
+    <p>Información verificada, accesible y humana sobre crianza, desarrollo infantil, adolescencia y bienestar emocional — para que acompañar a tu familia sea más fácil.</p>
+    <div class="hero-badges">
+      <span class="badge">👶 Niños</span>
+      <span class="badge">🧒 Adolescentes</span>
+      <span class="badge">👨‍👩‍👧 Familias</span>
+      <span class="badge">❤️ Parejas</span>
+      <span class="badge">🧠 Salud mental</span>
+    </div>
+    <a href="#temas" class="btn-primario">Explorar temas →</a>
+  </div>
+  <div class="hero-imagen">
+    <div class="hero-deco"></div>
+    <img src="carol-logo.png" alt="Psicóloga Carol" onerror="this.style.background='linear-gradient(135deg,#7EE8E8,#F2A97E)';this.style.display='flex'">
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     STATS
+══════════════════════════════ -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <span class="stat-num">20+</span>
+      <span class="stat-label">Categorías de contenido psicoeducativo</span>
+    </div>
+    <div>
+      <span class="stat-num">160+</span>
+      <span class="stat-label">Temas basados en evidencia científica</span>
+    </div>
+    <div>
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Gratuito para familias y pacientes</span>
+    </div>
+    <div>
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Nuevo contenido cada semana</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     BANNER PUBLICITARIO (AdSense)
+══════════════════════════════ -->
+<div class="ad-banner">
+  <!-- Aquí va tu código de Google AdSense cuando lo tengas aprobado -->
+  <!-- <ins class="adsbygoogle" ... ></ins> -->
+  <span style="opacity:0.4; font-size:11px;">Espacio publicitario · Google AdSense</span>
+</div>
+
+<!-- ══════════════════════════════
+     TEMAS PRINCIPALES
+══════════════════════════════ -->
+<section class="seccion" id="temas">
+  <div class="seccion-header">
+    <span class="etiqueta-seccion">Biblioteca de contenido</span>
+    <h2>Explora todos los <em>temas</em></h2>
+    <p>Haz clic en cualquier categoría para desplegar los subtemas. Cada uno tiene contenido psicoeducativo completo, práctico y basado en evidencia.</p>
+  </div>
+
+  <div class="grid-categorias">
+
+    <!-- CATEGORÍA 1 -->
+    <div class="categoria-card c1">
+      <div class="cat-barra b1"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">🧠</span>
+        <div class="cat-titulo">
+          <h3>Neurodesarrollo</h3>
+          <span>9 temas · TDAH, TEA, aprendizaje y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>TDAH: qué es y qué no es</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El TDAH (Trastorno por Déficit de Atención e Hiperactividad)</strong> es una condición neurológica del desarrollo que afecta la capacidad de regular la atención, el impulso y la actividad motora. No es falta de voluntad ni mala crianza.</p>
+            <p>Existen tres presentaciones: predominantemente inatenta, predominantemente hiperactiva/impulsiva, y combinada. Cada niño lo vive de forma única.</p>
+            <p>El diagnóstico es clínico — lo realiza un psicólogo o psiquiatra tras evaluación completa. Requiere que los síntomas estén presentes en más de un contexto (casa y escuela) y desde antes de los 12 años.</p>
+            <span class="tag-evidencia">✓ Basado en DSM-5-TR · APA 2022</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Trastorno del Espectro Autista (TEA)</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El TEA es una diferencia neurológica</strong> que afecta la comunicación social y produce patrones de comportamiento repetitivos o intereses muy focalizados. No es una enfermedad — es una forma distinta de procesar el mundo.</p>
+            <p>Se habla de "espectro" porque la variabilidad es enorme: desde niños con grandes capacidades verbales hasta quienes necesitan apoyo intensivo. El nivel de soporte necesario varía, no la valía de la persona.</p>
+            <p>La detección temprana — antes de los 3 años — mejora significativamente el pronóstico al permitir intervenciones que potencian el desarrollo.</p>
+            <span class="tag-evidencia">✓ Basado en DSM-5-TR · APA 2022</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Funciones ejecutivas</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>Las funciones ejecutivas son las habilidades mentales</strong> que nos permiten planificar, iniciar, organizar, controlar impulsos y regular emociones. Se desarrollan principalmente en el lóbulo prefrontal y maduran hasta los 25 años.</p>
+            <p>Incluyen: memoria de trabajo, flexibilidad cognitiva, control inhibitorio, planificación y regulación emocional. Son la base del aprendizaje y del comportamiento adaptativo.</p>
+            <p>Se pueden fortalecer con práctica, rutinas claras, juego y entornos predecibles. No son fijas — son entrenables.</p>
+            <span class="tag-evidencia">✓ Basado en Diamond, A. (2013) · Annual Review of Psychology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 2 -->
+    <div class="categoria-card c2">
+      <div class="cat-barra b2"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">👶</span>
+        <div class="cat-titulo">
+          <h3>Crianza y desarrollo infantil</h3>
+          <span>10 temas · Apego, límites, autoestima y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Estilos de crianza</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>La investigación identifica cuatro estilos principales:</strong> autoritario (exige sin explicar), permisivo (cede sin límites), negligente (poco involucrado) y democrático/autoritativo (combina calidez con estructura clara).</p>
+            <p>El estilo democrático está consistentemente asociado a mejores resultados en salud mental infantil, autoestima, rendimiento académico y habilidades sociales.</p>
+            <p>No existe la crianza perfecta. Lo importante no es el estilo "puro" sino la consistencia, la reparación después del error y el vínculo afectivo estable.</p>
+            <span class="tag-evidencia">✓ Basado en Baumrind, D. (1991) · Child Development</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Apego: tipos y qué significa</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El apego es el vínculo emocional profundo</strong> que el niño forma con sus cuidadores principales en los primeros años. Es la base de la seguridad emocional para toda la vida.</p>
+            <p>El apego seguro se forma cuando el cuidador responde de forma sensible y consistente. El niño aprende que el mundo es seguro y que puede explorar porque tiene una base a quien volver.</p>
+            <p>Los estilos inseguros (ansioso, evitativo, desorganizado) no son sentencias — se pueden trabajar en terapia y mejorar en cualquier momento del desarrollo.</p>
+            <span class="tag-evidencia">✓ Basado en Bowlby & Ainsworth · Teoría del Apego</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Límites y disciplina positiva</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>Los límites no son castigo</strong> — son estructuras que dan seguridad. Un niño sin límites no se siente libre: se siente solo y asustado.</p>
+            <p>La disciplina positiva plantea que los niños se comportan mejor cuando se sienten conectados, capaces y contribuyentes. El objetivo no es el control inmediato sino la autorregulación a largo plazo.</p>
+            <p>Herramientas clave: consecuencias naturales y lógicas (no castigo arbitrario), validación emocional antes de corregir, y enfocarse en la solución más que en el error.</p>
+            <span class="tag-evidencia">✓ Basado en Jane Nelsen · Positive Discipline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 3 -->
+    <div class="categoria-card c3">
+      <div class="cat-barra b3"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">🧒</span>
+        <div class="cat-titulo">
+          <h3>Conducta infantil</h3>
+          <span>9 temas · Rabietas, impulsividad, conductas y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Rabietas: qué hay detrás</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>Las rabietas son explosiones emocionales normales</strong> en niños de 1 a 4 años porque el cerebro prefrontal — el que regula emociones — aún no está desarrollado. No son manipulación.</p>
+            <p>Ocurren cuando el niño siente frustración, hambre, cansancio o necesidad de control que no puede expresar con palabras. La intensidad no indica un problema — indica una necesidad.</p>
+            <p>Lo que funciona: mantener la calma del adulto, no ceder a la demanda pero sí validar la emoción, y ofrecer contacto físico cuando el niño lo permite. Lo que no funciona: gritar, razonar en el pico de la rabieta o ignorar completamente.</p>
+            <span class="tag-evidencia">✓ Basado en evidencia de neurociencia del desarrollo</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Refuerzo positivo: cómo usarlo bien</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El refuerzo positivo</strong> es cualquier consecuencia que aumenta la probabilidad de que una conducta se repita. No se limita a premios — incluye atención, elogio específico y privilegios.</p>
+            <p>El elogio más efectivo no es "eres muy listo" (que fija una identidad) sino "veo que trabajaste muy duro en esto" (que refuerza el esfuerzo y la process).</p>
+            <p>El error más común es usar el refuerzo de forma inconsistente. La consistencia y la inmediatez (reforzar justo después de la conducta) son las claves de su efectividad.</p>
+            <span class="tag-evidencia">✓ Basado en B.F. Skinner & Dweck, C. (growth mindset)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 4 -->
+    <div class="categoria-card c4">
+      <div class="cat-barra b4"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">🎓</span>
+        <div class="cat-titulo">
+          <h3>Contexto escolar</h3>
+          <span>10 temas · Bullying, adaptación, aprendizaje y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Bullying: señales y cómo actuar</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El bullying es acoso intencional, repetido y con desequilibrio de poder</strong> — no es un conflicto entre iguales. La diferencia importa porque la intervención es distinta.</p>
+            <p>Señales en el niño: cambios de humor al hablar de la escuela, quejas físicas los días de colegio, retraimiento, pérdida de pertenencias sin explicación, o miedo al transporte escolar.</p>
+            <p>Lo primero es creerle. Lo segundo es no pedirle que lo "resuelva solo". Lo tercero es contactar la escuela con documentación concreta (fechas, hechos). La intervención temprana reduce significativamente la duración y el impacto.</p>
+            <span class="tag-evidencia">✓ Basado en Olweus, D. · Bullying Prevention Program</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Ansiedad escolar</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>La ansiedad escolar</strong> incluye desde nervios antes de un examen hasta rechazo escolar severo con síntomas físicos. Es uno de los motivos de consulta más frecuentes en psicología infantil.</p>
+            <p>Puede manifestarse como dolor de barriga recurrente, llanto antes de entrar al colegio, pesadillas, dificultad para concentrarse o quejas frecuentes de enfermedad. El cuerpo habla lo que las palabras no pueden decir aún.</p>
+            <p>La respuesta más efectiva combina validación emocional (no minimizar), exposición gradual al contexto escolar (no evitación total) y coordinación entre familia y escuela.</p>
+            <span class="tag-evidencia">✓ Basado en Kearney, C. · School Refusal Behavior</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 5 -->
+    <div class="categoria-card c5">
+      <div class="cat-barra b5"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">👦</span>
+        <div class="cat-titulo">
+          <h3>Adolescencia</h3>
+          <span>10 temas · Identidad, redes sociales, sexualidad y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>El cerebro adolescente</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El cerebro adolescente no está "roto" — está en construcción.</strong> El sistema límbico (emociones, placer, riesgo) madura antes que el lóbulo prefrontal (planificación, control de impulsos). Eso explica muchas conductas.</p>
+            <p>Esta asimetría es biológicamente normal y tiene un propósito evolutivo: empujar al joven fuera del nido familiar para explorar. El problema surge cuando el entorno no ofrece opciones seguras de exploración.</p>
+            <p>La búsqueda de aprobación del grupo de pares es máxima en esta etapa — no por superficialidad sino porque el cerebro registra el rechazo social como amenaza física real.</p>
+            <span class="tag-evidencia">✓ Basado en Steinberg, L. · Age of Opportunity (2014)</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Redes sociales y salud mental</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El impacto de las redes sociales no es uniforme.</strong> Depende del tipo de uso (activo vs. pasivo), el contenido consumido, la cantidad de horas y la vulnerabilidad previa del adolescente.</p>
+            <p>La comparación social en redes activa los mismos circuitos cerebrales que el rechazo interpersonal directo. Los feeds de imagen corporal son el área de mayor riesgo documentado, especialmente en chicas.</p>
+            <p>En vez de prohibir (ineficaz después de los 13), la estrategia con mayor evidencia es el consumo crítico y consciente: hablar abiertamente sobre lo que se ve, cuestionar lo que parece "real" y establecer horarios en familia.</p>
+            <span class="tag-evidencia">✓ Basado en Twenge, J.M. & Haidt, J. (2023)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 6 -->
+    <div class="categoria-card c6">
+      <div class="cat-barra b6"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">👨‍👩‍👧</span>
+        <div class="cat-titulo">
+          <h3>Familia</h3>
+          <span>10 temas · Comunicación, conflictos, divorcio y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Comunicación familiar efectiva</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>La comunicación familiar no es solo hablar</strong> — es crear condiciones para que todos puedan ser escuchados sin miedo al juicio. Los patrones comunicativos se aprenden y se pueden cambiar.</p>
+            <p>Las familias con mejor salud comunicativa tienen en común: escucha activa (sin interrumpir ni resolver de inmediato), expresión de necesidades en primera persona ("yo siento" en vez de "tú siempre"), y momentos regulares de conexión sin pantallas.</p>
+            <p>La cena familiar sin dispositivos, aunque sean 20 minutos, es una de las intervenciones con más evidencia para el bienestar emocional de los hijos.</p>
+            <span class="tag-evidencia">✓ Basado en Gottman, J. · The Relationship Cure</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Separación y divorcio con hijos</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>Lo que más protege a los hijos durante un divorcio no es que los padres sigan juntos,</strong> sino que el conflicto entre ellos sea bajo y que ambos mantengan una relación afectiva estable con el niño.</p>
+            <p>Los niños no necesitan todos los detalles — necesitan saber que no es su culpa, que ambos padres los siguen amando y que su vida cotidiana tendrá la mayor estabilidad posible.</p>
+            <p>Ponerlos de mensajeros, hablar mal del otro progenitor frente a ellos o pedirles que "elijan" son las conductas con mayor impacto negativo documentado en el desarrollo emocional infantil.</p>
+            <span class="tag-evidencia">✓ Basado en Emery, R. · The Truth About Children and Divorce</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 7 -->
+    <div class="categoria-card c7">
+      <div class="cat-barra b7"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">💬</span>
+        <div class="cat-titulo">
+          <h3>Regulación emocional</h3>
+          <span>10 temas · Ansiedad, ira, inteligencia emocional y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>¿Qué son las emociones?</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>Las emociones son respuestas neurobiológicas</strong> ante situaciones que el cerebro evalúa como relevantes para nuestra supervivencia o bienestar. No son buenas ni malas — son información.</p>
+            <p>Todas las emociones cumplen una función: el miedo protege, la tristeza pide cuidado, la rabia defiende límites, la alegría refuerza conexión. El problema no es sentirlas — es no saber qué hacer con ellas.</p>
+            <p>La inteligencia emocional no es no llorar ni no enojarse. Es poder identificar qué siento, entender por qué lo siento y decidir cómo respondo — en vez de solo reaccionar.</p>
+            <span class="tag-evidencia">✓ Basado en Goleman, D. & Barrett, L.F. (2017)</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Ansiedad: señales y estrategias</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>La ansiedad es la emoción del "¿y si...?"</strong> — anticipa peligros futuros para protegernos. En dosis moderadas es adaptativa. Se convierte en problema cuando es desproporcionada, persistente e interfiere con la vida diaria.</p>
+            <p>En niños se manifiesta frecuentemente como síntomas físicos (dolor de barriga, cabeza, fatiga), no necesariamente como "preocupación" verbalizada. En adolescentes puede parecerse más a irritabilidad que a tristeza.</p>
+            <p>Estrategias con evidencia: respiración diafragmática lenta, exposición gradual a lo temido (no evitación), reestructuración cognitiva de pensamientos catastrofistas, y movimiento físico regular.</p>
+            <span class="tag-evidencia">✓ Basado en Beck, A.T. · Cognitive Therapy of Anxiety</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 8 -->
+    <div class="categoria-card c8">
+      <div class="cat-barra b8"></div>
+      <div class="cat-header" onclick="toggleCategoria(this)">
+        <span class="cat-icono">🧠</span>
+        <div class="cat-titulo">
+          <h3>Salud mental general</h3>
+          <span>10 temas · Depresión, duelo, trauma y más</span>
+        </div>
+        <button class="cat-toggle">+</button>
+      </div>
+      <div class="cat-contenido">
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>¿Cuándo ir a terapia?</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>No hay que esperar una crisis.</strong> La terapia es útil cuando algo interfiere con tu bienestar, tus relaciones o tu funcionamiento diario — aunque no sepas exactamente qué es.</p>
+            <p>Señales de que es buen momento: tristeza o ansiedad que dura más de dos semanas, dificultades en el trabajo o la escuela sin causa clara, conflictos relacionales repetitivos, síntomas físicos sin causa médica, o simplemente querer entenderte mejor.</p>
+            <p>Ir a terapia no significa estar "loco". Significa tomar en serio tu salud mental con la misma naturalidad con la que cuidas tu salud física.</p>
+            <span class="tag-evidencia">✓ Basado en APA · Guidelines for Psychological Practice</span>
+          </div>
+        </div>
+        <div class="subtema" onclick="toggleSubtema(this)">
+          <div class="subtema-titulo"><span>Estigma en salud mental</span><span class="subtema-flecha">▶</span></div>
+          <div class="subtema-contenido">
+            <p><strong>El estigma es la barrera número uno</strong> que impide que las personas busquen ayuda psicológica. Se estima que más del 50% de personas con condiciones de salud mental no reciben tratamiento debido al estigma.</p>
+            <p>El estigma tiene dos formas: externo (juicio de otros) e interno (vergüenza propia). El interno suele ser el más paralizante porque la persona lo carga sola.</p>
+            <p>Hablar abiertamente sobre salud mental en familia — desde pequeños — es una de las acciones preventivas más poderosas y accesibles que existe.</p>
+            <span class="tag-evidencia">✓ Basado en WHO Mental Health Report 2022</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+</section>
+
+<!-- ══════════════════════════════
+     SEGUNDO BANNER PUBLICITARIO
+══════════════════════════════ -->
+<div class="ad-banner">
+  <span style="opacity:0.4; font-size:11px;">Espacio publicitario · Google AdSense</span>
+</div>
+
+<!-- ══════════════════════════════
+     SOBRE CAROL
+══════════════════════════════ -->
+<section class="sobre-carol" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-logo">
+      <img src="carol-logo.png" alt="Soy Psico Carol" onerror="this.style.background='linear-gradient(135deg,#7EE8E8,#F2A97E)';this.style.borderRadius='50%'">
+    </div>
+    <div class="sobre-texto">
+      <h2>Hola, soy <em>Carol</em> — psicóloga familiar</h2>
+      <p>Llevo años acompañando a familias, niños y adolescentes en sus procesos emocionales. Este espacio nació de una convicción simple: la información psicoeducativa de calidad debe ser accesible para todos, no solo para quienes pueden costear una consulta.</p>
+      <p>Todo el contenido que encuentras aquí está basado en evidencia científica actualizada y traducido al lenguaje real de las familias — sin tecnicismos innecesarios, sin juicios, con mucho respeto por lo complejo que es criar, crecer y relacionarse.</p>
+      <p>Este es tu espacio. Léelo, compártelo, pregunta lo que necesites.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     COMUNIDAD / COMENTARIOS
+══════════════════════════════ -->
+<section class="seccion-comentarios" id="comunidad">
+  <h2>Pregunta, comenta, <em>conecta</em></h2>
+  <p>Este es un espacio de comunidad. Puedes dejar tus preguntas o reflexiones abajo — yo leo y respondo personalmente.</p>
+
+  <!-- DISQUS: reemplaza "tu-shortname" con tu shortname de Disqus -->
+  <div id="disqus_thread"></div>
+  <noscript>
+    <div class="disqus-placeholder">
+      <strong>💬 Sección de comentarios</strong>
+      Para activar los comentarios, crea una cuenta en <a href="https://disqus.com" target="_blank">disqus.com</a> y reemplaza "tu-shortname" en el código JavaScript con tu shortname real.
+    </div>
+  </noscript>
+</section>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer>
+  <p><strong>Soy Psico. Carol</strong> · Psicóloga Familiar · Doral, Florida</p>
+  <p style="margin-top:10px;">Este sitio es de carácter informativo y psicoeducativo. No reemplaza la consulta profesional.</p>
+  <p style="margin-top:10px; opacity:0.4;">© 2025 · Todos los derechos reservados</p>
+</footer>
+
+<!-- ══════════════════════════════
+     JAVASCRIPT
+══════════════════════════════ -->
+<script>
+  // Toggle categoría principal
+  function toggleCategoria(header) {
+    const contenido = header.nextElementSibling.nextElementSibling;
+    const toggle = header.querySelector('.cat-toggle');
+    const estaAbierto = contenido.classList.contains('visible');
+
+    // Cerrar todos
+    document.querySelectorAll('.cat-contenido').forEach(c => c.classList.remove('visible'));
+    document.querySelectorAll('.cat-toggle').forEach(t => t.classList.remove('abierto'));
+
+    // Abrir el clickeado si estaba cerrado
+    if (!estaAbierto) {
+      contenido.classList.add('visible');
+      toggle.classList.add('abierto');
+    }
+  }
+
+  // Toggle subtema
+  function toggleSubtema(el) {
+    const estaExpandido = el.classList.contains('expandido');
+    // Cerrar todos los subtemas del mismo padre
+    el.parentElement.querySelectorAll('.subtema').forEach(s => s.classList.remove('expandido'));
+    if (!estaExpandido) el.classList.add('expandido');
+  }
+
+  // DISQUS — reemplaza 'tu-shortname' con tu shortname real de Disqus
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tu-shortname.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+</body>
+</html>
